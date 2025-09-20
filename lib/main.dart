@@ -12,9 +12,8 @@ import 'app/routes/app_pages.dart';
 import 'helper/notification_helper.dart';
 import 'translation/language.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+
 // lib/app/modules/favorites/controllers/favorites_controller.dart
-import 'package:get/get.dart';
-import 'package:hive/hive.dart';
 final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
     FlutterLocalNotificationsPlugin();
 final box = GetStorage();
@@ -33,8 +32,8 @@ void main() async {
 
   NotificationBody? body;
   try {
-    final RemoteMessage? remoteMessage =
-        await FirebaseMessaging.instance.getInitialMessage();
+    final RemoteMessage? remoteMessage = await FirebaseMessaging.instance
+        .getInitialMessage();
     if (remoteMessage != null) {
       body = NotificationHelper.convertNotification(remoteMessage.data);
     }
@@ -52,21 +51,18 @@ void main() async {
     ScreenUtilInit(
       designSize: const Size(360, 800),
       builder: ((context, child) => GetMaterialApp(
-            debugShowCheckedModeBanner: false,
-            title: "PS CAFE DO",
-            translations: Languages(),
-            theme: ThemeData(useMaterial3: false),
-            locale: langValue,
-            initialRoute: AppPages.INITIAL,
-            getPages: AppPages.routes,
-            initialBinding: SplashBinding(),
-          )),
+        debugShowCheckedModeBanner: false,
+        title: "PS CAFE DO",
+        translations: Languages(),
+        theme: ThemeData(useMaterial3: false),
+        locale: langValue,
+        initialRoute: AppPages.INITIAL,
+        getPages: AppPages.routes,
+        initialBinding: SplashBinding(),
+      )),
     ),
   );
 }
-
-
-
 
 class FavoritesController extends GetxController {
   late Box<int> _box;

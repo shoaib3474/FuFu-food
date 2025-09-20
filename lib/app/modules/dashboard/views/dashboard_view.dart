@@ -15,7 +15,6 @@ import '../../cart/views/cart_view.dart';
 import '../../home/views/home_view.dart';
 import '../../home/widget/featured_item_section.dart';
 import '../../menu/views/menu_view.dart';
-import '../../offer/views/offer_view.dart';
 import '../../profile/views/profile_view.dart';
 
 class DashboardView extends StatefulWidget {
