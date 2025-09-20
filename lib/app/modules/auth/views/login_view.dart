@@ -54,8 +54,10 @@ class _LoginViewState extends State<LoginView> {
     }
   }
 
-  OutlineInputBorder _noBorder() =>
-      OutlineInputBorder(borderRadius: BorderRadius.circular(20.r), borderSide: BorderSide.none);
+  OutlineInputBorder _noBorder() => OutlineInputBorder(
+    borderRadius: BorderRadius.circular(20.r),
+    borderSide: BorderSide.none,
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -71,175 +73,276 @@ class _LoginViewState extends State<LoginView> {
               centerTitle: true,
               title: Text(
                 "Log In",
-                style: TextStyle(color: _yellow, fontWeight: FontWeight.w800, fontSize: 20.sp),
+                style: TextStyle(
+                  color: _yellow,
+                  fontWeight: FontWeight.w800,
+                  fontSize: 20.sp,
+                ),
               ),
               leading: IconButton(
-                icon: SvgPicture.asset(Images.back, colorFilter: const ColorFilter.mode(_yellow, BlendMode.srcIn)),
+                icon: SvgPicture.asset(
+                  Images.back,
+                  colorFilter: const ColorFilter.mode(_yellow, BlendMode.srcIn),
+                ),
                 onPressed: Get.back,
               ),
             ),
-            body: Column(
-              children: [
-                SizedBox(height: 80,),
-                SingleChildScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  padding: EdgeInsets.fromLTRB(20.w, 6.h, 20.w, 20.h),
-                  child: Form(
-                    key: formKey,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        // Welcome
-                        Text("Welcome",
-                            style: TextStyle(color: Colors.white, fontSize: 22.sp, fontWeight: FontWeight.w800)),
-                        SizedBox(height: 6.h),
-                        Text(
-                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                          style: TextStyle(color: _subtle, fontSize: 12.sp, height: 1.4),
-                        ),
-                        SizedBox(height: 22.h),
-
-                        // Email / Mobile
-                        Text("Email or Mobile Number",
-                            style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700, fontSize: 13.sp)),
-                        SizedBox(height: 8.h),
-                        TextFormField(
-                          controller: authController.emailController,
-                          style: const TextStyle(color: Colors.white),
-                          validator: (v) => (v == null || v.isEmpty) ? "Required" : null,
-                          decoration: InputDecoration(
-                            filled: true,
-                            fillColor: _field,
-                            hintText: "example@example.com",
-                            hintStyle: TextStyle(color: Colors.white70, fontSize: 13.sp),
-                            contentPadding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
-                            border: _noBorder(),
-                            enabledBorder: _noBorder(),
-                            focusedBorder: _noBorder(),
-                          ),
-                        ),
-                        SizedBox(height: 16.h),
-
-                        // Password
-                        Text("Password",
-                            style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700, fontSize: 13.sp)),
-                        SizedBox(height: 8.h),
-                        TextFormField(
-                          controller: authController.passwordController,
-                          obscureText: passwordVisible,
-                          style: const TextStyle(color: Colors.white),
-                          validator: (v) => (v == null || v.length < 6) ? "Password must be at least 6 characters" : null,
-                          decoration: InputDecoration(
-                            filled: true,
-                            fillColor: _field,
-                            hintText: "••••••••••••",
-                            hintStyle: TextStyle(color: Colors.white70, fontSize: 13.sp, letterSpacing: 2),
-                            contentPadding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
-                            border: _noBorder(),
-                            enabledBorder: _noBorder(),
-                            focusedBorder: _noBorder(),
-                            suffixIcon: IconButton(
-                              onPressed: () => setState(() => passwordVisible = !passwordVisible),
-                              icon: Icon(passwordVisible ? Icons.visibility : Icons.visibility_off, color: _accent),
+            body: SingleChildScrollView(
+              child: Column(
+                children: [
+                  SizedBox(height: 80),
+                  SingleChildScrollView(
+                    physics: const BouncingScrollPhysics(),
+                    padding: EdgeInsets.fromLTRB(20.w, 6.h, 20.w, 20.h),
+                    child: Form(
+                      key: formKey,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          // Welcome
+                          Text(
+                            "Welcome",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 22.sp,
+                              fontWeight: FontWeight.w800,
                             ),
                           ),
-                        ),
-
-                        // Forgot
-                        Align(
-                          alignment: Alignment.centerRight,
-                          child: TextButton(
-                            onPressed: () => Get.to(() => const ForgetPasswordView(),
-                                transition: Transition.rightToLeft, duration: const Duration(milliseconds: 350)),
-                            style: TextButton.styleFrom(padding: EdgeInsets.only(top: 8.h)),
-                            child: Text("Forget Password", style: TextStyle(color: _accent, fontSize: 12.sp)),
-                          ),
-                        ),
-
-                        // Primary CTA
-                        SizedBox(height: 6.h),
-                        SizedBox(
-                          width: double.infinity,
-                          height: 50.h,
-                          child: ElevatedButton(
-                            onPressed: () {
-                              if (formKey.currentState!.validate()) {
-                                authController.login(
-                                  authController.emailController.text,
-                                  authController.passwordController.text,
-                                );
-                              }
-                            },
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: _accent,
-                              elevation: 0,
-                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(28.r)),
+                          SizedBox(height: 6.h),
+                          Text(
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                            style: TextStyle(
+                              color: _subtle,
+                              fontSize: 12.sp,
+                              height: 1.4,
                             ),
-                            child: Text("Log In",
-                                style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700, fontSize: 16.sp)),
                           ),
-                        ),
+                          SizedBox(height: 22.h),
 
-                        // LOGIN AS GUEST (added, matches style)
-                        if (splashController.configData.siteGuestLogin != 10) ...[
-                          SizedBox(height: 12.h),
+                          // Email / Mobile
+                          Text(
+                            "Email or Mobile Number",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w700,
+                              fontSize: 13.sp,
+                            ),
+                          ),
+                          SizedBox(height: 8.h),
+                          TextFormField(
+                            controller: authController.emailController,
+                            style: const TextStyle(color: Colors.white),
+                            validator: (v) =>
+                                (v == null || v.isEmpty) ? "Required" : null,
+                            decoration: InputDecoration(
+                              filled: true,
+                              fillColor: _field,
+                              hintText: "example@example.com",
+                              hintStyle: TextStyle(
+                                color: Colors.white70,
+                                fontSize: 13.sp,
+                              ),
+                              contentPadding: EdgeInsets.symmetric(
+                                horizontal: 16.w,
+                                vertical: 14.h,
+                              ),
+                              border: _noBorder(),
+                              enabledBorder: _noBorder(),
+                              focusedBorder: _noBorder(),
+                            ),
+                          ),
+                          SizedBox(height: 16.h),
+
+                          // Password
+                          Text(
+                            "Password",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w700,
+                              fontSize: 13.sp,
+                            ),
+                          ),
+                          SizedBox(height: 8.h),
+                          TextFormField(
+                            controller: authController.passwordController,
+                            obscureText: passwordVisible,
+                            style: const TextStyle(color: Colors.white),
+                            validator: (v) => (v == null || v.length < 6)
+                                ? "Password must be at least 6 characters"
+                                : null,
+                            decoration: InputDecoration(
+                              filled: true,
+                              fillColor: _field,
+                              hintText: "••••••••••••",
+                              hintStyle: TextStyle(
+                                color: Colors.white70,
+                                fontSize: 13.sp,
+                                letterSpacing: 2,
+                              ),
+                              contentPadding: EdgeInsets.symmetric(
+                                horizontal: 16.w,
+                                vertical: 14.h,
+                              ),
+                              border: _noBorder(),
+                              enabledBorder: _noBorder(),
+                              focusedBorder: _noBorder(),
+                              suffixIcon: IconButton(
+                                onPressed: () => setState(
+                                  () => passwordVisible = !passwordVisible,
+                                ),
+                                icon: Icon(
+                                  passwordVisible
+                                      ? Icons.visibility
+                                      : Icons.visibility_off,
+                                  color: _accent,
+                                ),
+                              ),
+                            ),
+                          ),
+
+                          // Forgot
+                          Align(
+                            alignment: Alignment.centerRight,
+                            child: TextButton(
+                              onPressed: () => Get.to(
+                                () => const ForgetPasswordView(),
+                                transition: Transition.rightToLeft,
+                                duration: const Duration(milliseconds: 350),
+                              ),
+                              style: TextButton.styleFrom(
+                                padding: EdgeInsets.only(top: 8.h),
+                              ),
+                              child: Text(
+                                "Forget Password",
+                                style: TextStyle(
+                                  color: _accent,
+                                  fontSize: 12.sp,
+                                ),
+                              ),
+                            ),
+                          ),
+
+                          // Primary CTA
+                          SizedBox(height: 6.h),
                           SizedBox(
                             width: double.infinity,
                             height: 50.h,
-                            child: OutlinedButton(
-                              onPressed: () => Get.to(() => PhoneNumberView(isGuest: true),
-                                  transition: Transition.rightToLeft, duration: const Duration(milliseconds: 350)),
-                              style: OutlinedButton.styleFrom(
-                                side: const BorderSide(color: _accent, width: 1.2),
-                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(28.r)),
-                                backgroundColor: _bg,
+                            child: ElevatedButton(
+                              onPressed: () {
+                                if (formKey.currentState!.validate()) {
+                                  authController.login(
+                                    authController.emailController.text,
+                                    authController.passwordController.text,
+                                  );
+                                }
+                              },
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: _accent,
+                                elevation: 0,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(28.r),
+                                ),
                               ),
                               child: Text(
-                                "Login as Guest".tr,
-                                style: TextStyle(color: _accent, fontSize: 16.sp, fontWeight: FontWeight.w700),
+                                "Log In",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 16.sp,
+                                ),
                               ),
                             ),
                           ),
-                        ],
 
-                        // Social
-                        SizedBox(height: 18.h),
-                        // Center(
-                        //   child: Text("or sign up with",
-                        //       style: TextStyle(color: _subtle, fontSize: 12.sp, fontWeight: FontWeight.w500)),
-                        // ),
-                        // SizedBox(height: 12.h),
-                        // Row(
-                        //   mainAxisAlignment: MainAxisAlignment.center,
-                        //   children: [
-                        //     _SocialCircle(label: "G", onTap: () {}),
-                        //     SizedBox(width: 14.w),
-                        //     _SocialCircle(label: "f", onTap: () {}),
-                        //     SizedBox(width: 14.w),
-                        //     _SocialCircle(icon: Icons.fingerprint, onTap: () {}),
-                        //   ],
-                        // ),
-
-                        // Bottom Sign up
-                        SizedBox(height: 24.h),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text("Don't have an account?", style: TextStyle(color: _subtle, fontSize: 13.sp)),
-                            SizedBox(width: 6.w),
-                            InkWell(
-                              onTap: () => Get.to(() => PhoneNumberView(isGuest: false),
-                                  transition: Transition.rightToLeft, duration: const Duration(milliseconds: 350)),
-                              child: Text("Sign Up",
-                                  style: TextStyle(color: _accent, fontWeight: FontWeight.w700, fontSize: 13.5.sp)),
+                          // LOGIN AS GUEST (added, matches style)
+                          if (splashController.configData.siteGuestLogin !=
+                              10) ...[
+                            SizedBox(height: 12.h),
+                            SizedBox(
+                              width: double.infinity,
+                              height: 50.h,
+                              child: OutlinedButton(
+                                onPressed: () => Get.to(
+                                  () => PhoneNumberView(isGuest: true),
+                                  transition: Transition.rightToLeft,
+                                  duration: const Duration(milliseconds: 350),
+                                ),
+                                style: OutlinedButton.styleFrom(
+                                  side: const BorderSide(
+                                    color: _accent,
+                                    width: 1.2,
+                                  ),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(28.r),
+                                  ),
+                                  backgroundColor: _bg,
+                                ),
+                                child: Text(
+                                  "Login as Guest".tr,
+                                  style: TextStyle(
+                                    color: _accent,
+                                    fontSize: 16.sp,
+                                    fontWeight: FontWeight.w700,
+                                  ),
+                                ),
+                              ),
                             ),
                           ],
-                        ),
-                      ],
+
+                          // Social
+                          SizedBox(height: 18.h),
+                          // Center(
+                          //   child: Text("or sign up with",
+                          //       style: TextStyle(color: _subtle, fontSize: 12.sp, fontWeight: FontWeight.w500)),
+                          // ),
+                          // SizedBox(height: 12.h),
+                          // Row(
+                          //   mainAxisAlignment: MainAxisAlignment.center,
+                          //   children: [
+                          //     _SocialCircle(label: "G", onTap: () {}),
+                          //     SizedBox(width: 14.w),
+                          //     _SocialCircle(label: "f", onTap: () {}),
+                          //     SizedBox(width: 14.w),
+                          //     _SocialCircle(icon: Icons.fingerprint, onTap: () {}),
+                          //   ],
+                          // ),
+
+                          // Bottom Sign up
+                          SizedBox(height: 24.h),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "Don't have an account?",
+                                style: TextStyle(
+                                  color: _subtle,
+                                  fontSize: 13.sp,
+                                ),
+                              ),
+                              SizedBox(width: 6.w),
+                              InkWell(
+                                onTap: () => Get.to(
+                                  () => PhoneNumberView(isGuest: false),
+                                  transition: Transition.rightToLeft,
+                                  duration: const Duration(milliseconds: 350),
+                                ),
+                                child: Text(
+                                  "Sign Up",
+                                  style: TextStyle(
+                                    color: _accent,
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 13.5.sp,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
 
@@ -275,19 +378,19 @@ class _SocialCircle extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.white,
           shape: BoxShape.circle,
-          border:  Border.all(color: _LoginViewState._accent, width: 1.2),
+          border: Border.all(color: _LoginViewState._accent, width: 1.2),
         ),
         alignment: Alignment.center,
         child: icon != null
             ? Icon(icon, color: _LoginViewState._accent)
             : Text(
-          label ?? "",
-          style: TextStyle(
-            color: _LoginViewState._accent,
-            fontWeight: FontWeight.w800,
-            fontSize: 18.sp,
-          ),
-        ),
+                label ?? "",
+                style: TextStyle(
+                  color: _LoginViewState._accent,
+                  fontWeight: FontWeight.w800,
+                  fontSize: 18.sp,
+                ),
+              ),
       ),
     );
   }

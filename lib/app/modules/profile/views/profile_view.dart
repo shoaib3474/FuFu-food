@@ -291,96 +291,105 @@ class _ProfileViewState extends State<ProfileView> {
                               ],
                             ),
                           )
-                        :
-                          // If not logged in, show "Login Now" button
-                          Container(
+                        : Container(
                             width: sheetW,
                             margin: EdgeInsets.only(right: 10.w),
-                            padding: EdgeInsets.fromLTRB(
-                              18.w,
-                              18.h,
-                              18.w,
-                              18.h,
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 18.w,
+                              vertical: 20.h,
                             ),
                             decoration: BoxDecoration(
                               color: _sheet,
                               borderRadius: BorderRadius.circular(26),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.black.withOpacity(.2),
-                                  blurRadius: 18,
-                                  offset: const Offset(0, 10),
+                                  color: Colors.black.withOpacity(.1),
+                                  blurRadius: 12,
+                                  offset: const Offset(0, 6),
                                 ),
                               ],
                             ),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                // avatar + name/email
-                                Row(
-                                  children: [
-                                    _avatar(c),
-                                    SizedBox(width: 12.w),
-                                    Expanded(
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          ElevatedButton(
-                                            onPressed: () => Get.to(
-                                              () => LoginView(),
-                                              transition: Transition.cupertino,
-                                            ),
-                                            child: const Text("Login Now"),
-                                          ),
+                                // Section title
+                                Text(
+                                  "Quick Access",
+                                  style: TextStyle(
+                                    fontSize: 16.sp,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black87,
+                                  ),
+                                ),
+                                SizedBox(height: 14.h),
 
-                                          _divider(),
-                                          _tile(
-                                            icon: Icons.call_outlined,
-                                            label: "Contact Us",
-                                            onTap: () => Get.snackbar(
-                                              "Contact Us",
-                                              "Dummy action",
-                                              backgroundColor: Colors.black87,
-                                              colorText: _white,
-                                              snackPosition:
-                                                  SnackPosition.BOTTOM,
-                                            ),
-                                          ),
-                                          _divider(),
-                                          _tile(
-                                            icon: Icons.help_outline,
-                                            label: "Help & FAQs",
-                                            onTap: () => Get.snackbar(
-                                              "Help & FAQs",
-                                              "Dummy action",
-                                              backgroundColor: Colors.black87,
-                                              colorText: _white,
-                                              snackPosition:
-                                                  SnackPosition.BOTTOM,
-                                            ),
-                                          ),
-                                          _divider(),
-                                          _tile(
-                                            icon: Icons.settings_outlined,
-                                            label: "Settings",
-                                            onTap: () => Get.to(
-                                              () => const ChangeLanguageView(),
-                                              transition: Transition.cupertino,
-                                            ),
-                                          ),
-                                          _divider(),
-                                          // _tile(
-                                          //   icon: Icons.lock_outline,
-                                          //   label: "Change Password",
-                                          //   onTap: () => Get.to(() => ChangePasswordView(), transition: Transition.cupertino),
-                                          // ),
-                                          _divider(),
-                                        ],
+                                // Contact Us
+                                _tile(
+                                  icon: Icons.call_outlined,
+                                  label: "Contact Us",
+                                  onTap: () => Get.snackbar(
+                                    "Contact Us",
+                                    "Dummy action",
+                                    backgroundColor: Colors.black87,
+                                    colorText: _white,
+                                    snackPosition: SnackPosition.BOTTOM,
+                                  ),
+                                ),
+                                _divider(),
+
+                                // Help & FAQs
+                                _tile(
+                                  icon: Icons.help_outline,
+                                  label: "Help & FAQs",
+                                  onTap: () => Get.snackbar(
+                                    "Help & FAQs",
+                                    "Dummy action",
+                                    backgroundColor: Colors.black87,
+                                    colorText: _white,
+                                    snackPosition: SnackPosition.BOTTOM,
+                                  ),
+                                ),
+                                _divider(),
+
+                                // Settings
+                                _tile(
+                                  icon: Icons.settings_outlined,
+                                  label: "Settings",
+                                  onTap: () => Get.to(
+                                    () => const ChangeLanguageView(),
+                                    transition: Transition.cupertino,
+                                  ),
+                                ),
+                                Spacer(),
+                                // Login Button
+                                SizedBox(
+                                  width: double.infinity,
+                                  child: ElevatedButton(
+                                    style: ElevatedButton.styleFrom(
+                                      backgroundColor: _bg2,
+                                      padding: EdgeInsets.symmetric(
+                                        vertical: 14.h,
+                                      ),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(12),
+                                      ),
+                                      elevation: 3,
+                                    ),
+                                    onPressed: () => Get.to(
+                                      () => LoginView(),
+                                      transition: Transition.cupertino,
+                                    ),
+                                    child: Text(
+                                      "Login Now",
+                                      style: TextStyle(
+                                        fontSize: 15.sp,
+                                        fontWeight: FontWeight.w600,
+                                        color: Colors.white,
                                       ),
                                     ),
-                                  ],
+                                  ),
                                 ),
+                                SizedBox(height: 20.h),
                               ],
                             ),
                           ),
