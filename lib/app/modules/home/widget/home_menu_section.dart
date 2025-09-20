@@ -35,7 +35,7 @@ Widget homeMenuSection() {
                 ),
                 child: Text("VIEW_ALL".tr, style: fontRegularBoldwithColor),
               ),
-            )
+            ),
           ],
         ),
         SizedBox(height: 12.h),
@@ -43,26 +43,28 @@ Widget homeMenuSection() {
         // chips row
         menuController.categoryDataList.isNotEmpty
             ? SizedBox(
-          height: 96.h,
-          width: double.infinity,
-          child: ListView.separated(
-            padding: EdgeInsets.symmetric(horizontal: 2.w),
-            scrollDirection: Axis.horizontal,
-            itemCount: menuController.categoryDataList.length,
-            separatorBuilder: (_, __) => SizedBox(width: 14.w),
-            itemBuilder: (context, index) {
-              final item = menuController.categoryDataList[index];
-              return _CategoryChip(
-                label: item.name ?? '',
-                imageUrl: item.cover ?? '',
-                bgColor: catBg,
-                onTap: () {
-                  Get.to(() => MenuView(fromHome: true, categoryId: index));
-                },
-              );
-            },
-          ),
-        )
+                height: 96.h,
+                width: double.infinity,
+                child: ListView.separated(
+                  padding: EdgeInsets.symmetric(horizontal: 2.w),
+                  scrollDirection: Axis.horizontal,
+                  itemCount: menuController.categoryDataList.length,
+                  separatorBuilder: (_, __) => SizedBox(width: 14.w),
+                  itemBuilder: (context, index) {
+                    final item = menuController.categoryDataList[index];
+                    return _CategoryChip(
+                      label: item.name ?? '',
+                      imageUrl: item.cover ?? '',
+                      bgColor: catBg,
+                      onTap: () {
+                        Get.to(
+                          () => MenuView(fromHome: true, categoryId: index),
+                        );
+                      },
+                    );
+                  },
+                ),
+              )
             : menuSectionShimmer(),
       ],
     ),
@@ -86,11 +88,7 @@ class _CategoryChip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){
-
-
-
-      },
+      onTap: onTap,
       borderRadius: BorderRadius.circular(999),
       child: SizedBox(
         width: 72.w,
@@ -108,7 +106,6 @@ class _CategoryChip extends StatelessWidget {
                   imageUrl: imageUrl,
                   fit: BoxFit.contain,
                   // Optional tint to get the red line-icon feel (works best with mono/transparent icons)
-                  color: const Color(0xFFE84C4C),
                   colorBlendMode: BlendMode.srcIn,
                   placeholder: (_, __) => Shimmer.fromColors(
                     baseColor: Colors.grey[200]!,
@@ -120,7 +117,8 @@ class _CategoryChip extends StatelessWidget {
                       ),
                     ),
                   ),
-                  errorWidget: (_, __, ___) => const Icon(Icons.broken_image, size: 20),
+                  errorWidget: (_, __, ___) =>
+                      const Icon(Icons.broken_image, size: 20),
                 ),
               ),
             ),
