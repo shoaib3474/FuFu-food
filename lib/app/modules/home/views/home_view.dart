@@ -22,6 +22,8 @@ import '../widget/home_offer_section.dart';
 import '../widget/home_vew_shimmer.dart';
 import '../widget/popular_item_section.dart';
 import 'offerwidget.dart';
+import '../../cart/controllers/cart_controller.dart';
+
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -127,17 +129,50 @@ class _HomeViewState extends State<HomeView> {
                                     transition: Transition.cupertino,
                                   );
                                 },
+                                child: Stack(
+                                  clipBehavior: Clip.none,
+                                  children: [
+                                    CircleAvatar(
+                                      backgroundColor: Colors.white,
+                                      radius: 18,
+                                      child: Icon(
+                                        Icons.shopping_cart,
+                                        color: Colors.red,
+                                        size: 20,
+                                      ),
+                                    ),
+                                    GetBuilder<CartController>(
+                                      builder: (cartController) {
+                                        int itemCount =
+                                            cartController.cart.length;
+                                        if (itemCount == 0)
+                                          return const SizedBox.shrink();
 
-                                child: CircleAvatar(
-                                  backgroundColor: Colors.white,
-                                  radius: 18,
-                                  child: Icon(
-                                    Icons.shopping_cart,
-                                    color: Colors.red,
-                                    size: 20,
-                                  ),
+                                        return Positioned(
+                                          top: -4,
+                                          right: -4,
+                                          child: Container(
+                                            padding: const EdgeInsets.all(4),
+                                            decoration: const BoxDecoration(
+                                              color: Colors.red,
+                                              shape: BoxShape.circle,
+                                            ),
+                                            child: Text(
+                                              '$itemCount',
+                                              style: const TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 10,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                          ),
+                                        );
+                                      },
+                                    ),
+                                  ],
                                 ),
                               ),
+
                               SizedBox(width: 8),
                               CircleAvatar(
                                 backgroundColor: Colors.white,

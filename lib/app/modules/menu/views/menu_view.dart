@@ -115,8 +115,17 @@ class _MenuViewState extends State<MenuView> {
 Widget menuSection(bool fromHome, int categoryId) {
   return GetBuilder<MenuuController>(
     builder: (menuController) => Container(
-      color: Colors.deepOrange,
       padding: EdgeInsets.symmetric(vertical: 12.h),
+      decoration: BoxDecoration(
+        color: Colors.deepOrange,
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(16.r),
+          bottomRight: Radius.circular(16.r),
+        ),
+        boxShadow: [
+          BoxShadow(color: Colors.black12, blurRadius: 6, offset: Offset(0, 3)),
+        ],
+      ),
       child: SizedBox(
         height: 90.h,
         child: ListView.builder(
@@ -290,22 +299,12 @@ Widget menuItemSectionGrid() {
                         ? item.id as int
                         : int.tryParse('${item.id}') ?? 0;
 
-                    return Stack(
-                      children: [
-                        // your original card (with its own add-to-cart logic inside)
-                        itemCardGrid(
-                          menuController.categoryItemDataList,
-                          index,
-                          context,
-                        ),
-
-                        // ❤️ Favorite overlay (same as Featured)
-                        Positioned(
-                          top: 8,
-                          right: 8,
-                          child: FavoriteHeartButton(itemId: itemId),
-                        ),
-                      ],
+                    return
+                    // your original card (with its own add-to-cart logic inside)
+                    itemCardGrid(
+                      menuController.categoryItemDataList,
+                      index,
+                      context,
                     );
                   },
                 ),
@@ -334,23 +333,10 @@ Widget menuItemSectionList() {
                         ? item.id as int
                         : int.tryParse('${item.id}') ?? 0;
 
-                    return Stack(
-                      clipBehavior: Clip.none,
-                      children: [
-                        // ✅ Your original list card (keeps its ADD logic)
-                        itemCardList1(
-                          menuController.categoryItemDataList,
-                          index,
-                          context,
-                        ),
-
-                        // ❤️ Favorite overlay
-                        Positioned(
-                          top: 8,
-                          right: 8,
-                          child: FavoriteHeartButton(itemId: itemId),
-                        ),
-                      ],
+                    return itemCardList1(
+                      menuController.categoryItemDataList,
+                      index,
+                      context,
                     );
                   },
                 ),
