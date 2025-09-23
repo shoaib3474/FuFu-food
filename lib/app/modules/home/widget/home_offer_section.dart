@@ -27,9 +27,7 @@ Widget homeOfferSection() {
             final offer = offerController.offerDataList[index];
             return InkWell(
               onTap: () {
-                offerController.getOfferItemList(
-                  offer.slug.toString(),
-                );
+                offerController.getOfferItemList(offer.slug.toString());
               },
               child: Container(
                 decoration: BoxDecoration(
@@ -63,7 +61,7 @@ Widget homeOfferSection() {
                             ),
                             SizedBox(height: 5.h),
                             Text(
-                              "30% OFF",
+                              "40% OFF",
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 20.sp,
@@ -76,23 +74,29 @@ Widget homeOfferSection() {
                     ),
 
                     // Right Side: Image
+                    // Right Side: Image
                     Expanded(
                       flex: 6,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(16.r),
-                          bottomRight: Radius.circular(16.r),
-                        ),
-                        child: CachedNetworkImage(
-                          imageUrl: offer.image.toString(),
-                          fit: BoxFit.cover,
-                          placeholder: (context, url) => Shimmer.fromColors(
-                            child: Container(color: Colors.grey),
-                            baseColor: Colors.grey[300]!,
-                            highlightColor: Colors.grey[400]!,
+                      child: Container(
+                        // Force the image to take the full height of the parent Row
+                        height: double.infinity,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(16.r),
+                            bottomRight: Radius.circular(16.r),
                           ),
-                          errorWidget: (context, url, error) =>
-                          const Icon(Icons.error),
+                          child: CachedNetworkImage(
+                            imageUrl: offer.image.toString(),
+                            fit:
+                                BoxFit.fill, // Fill while keeping aspect ratio
+                            placeholder: (context, url) => Shimmer.fromColors(
+                              child: Container(color: Colors.grey),
+                              baseColor: Colors.grey[300]!,
+                              highlightColor: Colors.grey[400]!,
+                            ),
+                            errorWidget: (context, url, error) =>
+                                const Icon(Icons.error),
+                          ),
                         ),
                       ),
                     ),
@@ -106,6 +110,7 @@ Widget homeOfferSection() {
     },
   );
 }
+
 // // ignore_for_file: sort_child_properties_last
 //
 // import 'package:cached_network_image/cached_network_image.dart';
