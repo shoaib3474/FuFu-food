@@ -3,10 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import '../../../../util/constant.dart';
-import '../../../../util/style.dart';
 import '../../../../widget/loader.dart';
-import '../controllers/auth_controller.dart';
+import 'package:foodking/app/modules/auth/controllers/auth_controller.dart';
 
+// ignore: must_be_immutable
 class SignupView extends StatefulWidget {
   String? phoneNumber;
   SignupView({super.key, this.phoneNumber});

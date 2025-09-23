@@ -93,7 +93,7 @@ class _LoginViewState extends State<LoginView> {
                   SizedBox(height: 80),
                   SingleChildScrollView(
                     physics: const BouncingScrollPhysics(),
-                    padding: EdgeInsets.fromLTRB(20.w, 6.h, 20.w, 20.h),
+                    padding: EdgeInsets.fromLTRB(20.w, 4.h, 20.w, 20.h),
                     child: Form(
                       key: formKey,
                       child: Column(
@@ -108,16 +108,9 @@ class _LoginViewState extends State<LoginView> {
                               fontWeight: FontWeight.w800,
                             ),
                           ),
-                          SizedBox(height: 6.h),
-                          Text(
-                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                            style: TextStyle(
-                              color: _subtle,
-                              fontSize: 12.sp,
-                              height: 1.4,
-                            ),
-                          ),
-                          SizedBox(height: 22.h),
+                         
+                         
+                          SizedBox(height: 40.h),
 
                           // Email / Mobile
                           Text(

@@ -215,18 +215,18 @@ class _ProfileViewState extends State<ProfileView> {
                                     transition: Transition.cupertino,
                                   ),
                                 ),
-                                _divider(),
-                                _tile(
-                                  icon: Icons.credit_card_outlined,
-                                  label: "Payment Methods",
-                                  onTap: () => Get.snackbar(
-                                    "Payment Methods",
-                                    "Coming soon",
-                                    backgroundColor: Colors.black87,
-                                    colorText: _white,
-                                    snackPosition: SnackPosition.BOTTOM,
-                                  ),
-                                ),
+                                // _divider(),
+                                // _tile(
+                                //   icon: Icons.credit_card_outlined,
+                                //   label: "Payment Methods",
+                                //   onTap: () => Get.snackbar(
+                                //     "Payment Methods",
+                                //     "Coming soon",
+                                //     backgroundColor: Colors.black87,
+                                //     colorText: _white,
+                                //     snackPosition: SnackPosition.BOTTOM,
+                                //   ),
+                                // ),
                                 _divider(),
                                 _tile(
                                   icon: Icons.call_outlined,

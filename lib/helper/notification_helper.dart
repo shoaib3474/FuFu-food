@@ -21,19 +21,13 @@ class NotificationHelper {
     NotificationSettings settings =
         await FirebaseMessaging.instance.requestPermission(
       alert: true,
-      announcement: false,
       badge: true,
-      carPlay: false,
-      criticalAlert: false,
-      provisional: false,
       sound: true,
     );
     if (settings.authorizationStatus == AuthorizationStatus.authorized) {
-      debugPrint("User granted permission");
-    } else if (settings.authorizationStatus == AuthorizationStatus.authorized) {
-      debugPrint("User granted provisional permission");
+      debugPrint("✅ User granted permission");
     } else {
-      debugPrint("User denied permission");
+      debugPrint("❌ User denied permission");
     }
   }
 
@@ -41,14 +35,14 @@ class NotificationHelper {
       FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin) async {
     var androidInitialize =
         AndroidInitializationSettings('@mipmap/ic_launcher');
-    var iOSInitialize = new DarwinInitializationSettings();
-    var initializationsSettings = new InitializationSettings(
-        android: androidInitialize, iOS: iOSInitialize);
+    var iOSInitialize = DarwinInitializationSettings();
+    var initializationsSettings =
+        InitializationSettings(android: androidInitialize, iOS: iOSInitialize);
 
     flutterLocalNotificationsPlugin.initialize(initializationsSettings,
         onDidReceiveNotificationResponse: (payload) async {
       try {
-        if (payload.payload != null && payload.payload != '') {
+        if (payload.payload != null && payload.payload!.isNotEmpty) {
           PayLoadBody payLoadBody =
               PayLoadBody.fromJson(jsonDecode(payload.payload!));
           if (payLoadBody.topicName == 'Order Notification') {
@@ -59,46 +53,52 @@ class NotificationHelper {
       return;
     });
 
+    /// Foreground message
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
-      NotificationHelper.showNotification(
-          message, flutterLocalNotificationsPlugin, false);
-      var orderController = Get.put(OrderController());
+      if (_isValidNotification(message)) {
+        NotificationHelper.showNotification(
+            message, flutterLocalNotificationsPlugin, false);
 
-      orderController.orderNotificationId.value =
-          message.data["order_id"].toString();
-      if (message.data["order_id"].toString() == "") {
-        orderController.orderNotfyLoader.value = false;
-      } else {
-        orderController.orderNotfyLoader.value = true;
-      }
+        var orderController = Get.put(OrderController());
+        orderController.orderNotificationId.value =
+            message.data["order_id"].toString();
+        orderController.orderNotfyLoader.value =
+            message.data["order_id"].toString().isNotEmpty;
 
-      try {
-        if (message != null && message.data.isNotEmpty) {
+        try {
           NotificationBody _notificationBody =
               convertNotification(message.data);
-
           if (_notificationBody.topic == 'Order Notification') {
             Get.to(() => OrderView());
           }
+        } catch (e) {
+          print(e.toString());
         }
-      } catch (e) {
-        print(e.toString());
       }
     });
 
+    /// When app opened from notification
     FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage? message) {
-      try {
-        if (message != null && message.data.isNotEmpty) {
+      if (message != null &&
+          message.data.isNotEmpty &&
+          _isValidNotification(message)) {
+        try {
           NotificationBody _notificationBody =
               convertNotification(message.data);
-          if (_notificationBody.topic == 'general') {
+          if (_notificationBody.topic == 'Order Notification') {
             Get.to(() => OrderView());
           }
+        } catch (e) {
+          print(e.toString());
         }
-      } catch (e) {
-        print(e.toString());
       }
     });
+  }
+
+  /// 🔒 Only show notification if it contains order_id
+  static bool _isValidNotification(RemoteMessage message) {
+    return message.data.containsKey("order_id") &&
+        message.data["order_id"].toString().isNotEmpty;
   }
 
   static Future<void> showNotification(RemoteMessage message,
@@ -108,35 +108,15 @@ class NotificationHelper {
       String? _body;
       String? _image;
       String playLoad = jsonEncode(message.data);
+
       if (data) {
         _title = message.data['title'];
         _body = message.data['body'];
-        _image =
-            (message.data['image'] != null && message.data['image'].isNotEmpty)
-                ? message.data['image']
-                : null;
+        _image = message.data['image'];
       } else {
-        _title = message.notification!.title;
-        _body = message.notification!.body;
-        _image =
-            (message.data['image'] != null && message.data['image'].isNotEmpty)
-                ? message.data['image']
-                : null;
-        if (GetPlatform.isAndroid) {
-          _image = (message.notification!.android!.imageUrl != null &&
-                  message.notification!.android!.imageUrl!.isNotEmpty)
-              ? message.notification!.android!.imageUrl!.startsWith('http')
-                  ? message.notification!.android!.imageUrl
-                  : message.data['image']
-              : null;
-        } else if (GetPlatform.isIOS) {
-          _image = (message.notification!.apple!.imageUrl != null &&
-                  message.notification!.apple!.imageUrl!.isNotEmpty)
-              ? message.notification!.apple!.imageUrl!.startsWith('http')
-                  ? message.notification!.apple!.imageUrl
-                  : message.data['image']
-              : null;
-        }
+        _title = message.notification?.title ?? message.data['title'];
+        _body = message.notification?.body ?? message.data['body'];
+        _image = message.data['image'];
       }
 
       if (_image != null && _image.isNotEmpty) {
@@ -221,15 +201,20 @@ class NotificationHelper {
   }
 }
 
+/// Background FCM handler
 Future<dynamic> myBackgroundMessageHandler(RemoteMessage message) async {
-  var androidInitialize =
-      new AndroidInitializationSettings('notification_icon');
-  var iOSInitialize = new DarwinInitializationSettings();
-  var initializationsSettings = new InitializationSettings(
-      android: androidInitialize, iOS: iOSInitialize);
-  FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
-      FlutterLocalNotificationsPlugin();
-  flutterLocalNotificationsPlugin.initialize(initializationsSettings);
-  NotificationHelper.showNotification(
-      message, flutterLocalNotificationsPlugin, true);
+  if (message.data.containsKey("order_id") &&
+      message.data["order_id"].toString().isNotEmpty) {
+    var androidInitialize = AndroidInitializationSettings('notification_icon');
+    var iOSInitialize = DarwinInitializationSettings();
+    var initializationsSettings =
+        InitializationSettings(android: androidInitialize, iOS: iOSInitialize);
+
+    FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+        FlutterLocalNotificationsPlugin();
+    flutterLocalNotificationsPlugin.initialize(initializationsSettings);
+
+    await NotificationHelper.showNotification(
+        message, flutterLocalNotificationsPlugin, true);
+  }
 }
