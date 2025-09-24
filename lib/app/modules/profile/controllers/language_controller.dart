@@ -7,9 +7,9 @@ class LanguageController extends GetxController {
 
   @override
   void onInit() {
-    if (box.read('selectedLanguageValue') == null) {
-      box.write('languageCode', 'en');
-      box.write('selectedLanguageValue', 'English');
+    if (box.read('languageCode') == null) {
+      box.write('languageCode', 'it');
+      box.write('selectedLanguageValue', 'Italiano');
       update();
     }
     super.onInit();

@@ -17,7 +17,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
     FlutterLocalNotificationsPlugin();
 final box = GetStorage();
-dynamic langValue = const Locale('en', null);
+Locale? langValue;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -45,7 +45,7 @@ void main() async {
   if (box.read('languageCode') != null) {
     langValue = Locale(box.read('languageCode'), null);
   } else {
-    langValue = const Locale('it', null);
+    langValue = const Locale('it');
   }
   runApp(
     ScreenUtilInit(
@@ -56,6 +56,7 @@ void main() async {
         translations: Languages(),
         theme: ThemeData(useMaterial3: false),
         locale: langValue,
+        fallbackLocale: const Locale('it'),
         initialRoute: AppPages.INITIAL,
         getPages: AppPages.routes,
         initialBinding: SplashBinding(),
