@@ -29,6 +29,11 @@ import '../modules/search/bindings/search_binding.dart';
 import '../modules/search/views/search_view.dart';
 import '../modules/splash/bindings/splash_binding.dart';
 import '../modules/splash/views/splash_view.dart';
+import '../modules/contact/views/contact_view.dart';
+import '../modules/contact/bindings/contact_binding.dart';
+import '../modules/help/views/help_view.dart';
+import '../modules/help/bindings/help_binding.dart';
+
 
 part 'app_routes.dart';
 
@@ -108,5 +113,17 @@ class AppPages {
       page: () => AddPickLocationView(),
       binding: AddressBinding(),
     ),
+
+    GetPage(
+  name: _Paths.CONTACT,
+  page: () => const ContactView(),
+  binding: ContactBinding(),
+),
+GetPage(
+  name: _Paths.HELP,
+  page: () => const HelpView(),
+  binding: HelpBinding(),
+),
+
   ];
 }

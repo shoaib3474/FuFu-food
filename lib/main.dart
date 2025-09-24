@@ -45,7 +45,7 @@ void main() async {
   if (box.read('languageCode') != null) {
     langValue = Locale(box.read('languageCode'), null);
   } else {
-    langValue = const Locale('en', null);
+    langValue = const Locale('it', null);
   }
   runApp(
     ScreenUtilInit(

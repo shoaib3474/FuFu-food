@@ -2,6 +2,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:foodking/app/modules/contact/views/contact_view.dart';
+import 'package:foodking/app/modules/help/views/help_view.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:shimmer/shimmer.dart';
@@ -231,24 +233,18 @@ class _ProfileViewState extends State<ProfileView> {
                                 _tile(
                                   icon: Icons.call_outlined,
                                   label: "Contact Us",
-                                  onTap: () => Get.snackbar(
-                                    "Contact Us",
-                                    "Dummy action",
-                                    backgroundColor: Colors.black87,
-                                    colorText: _white,
-                                    snackPosition: SnackPosition.BOTTOM,
+                                  onTap: () => Get.to(
+                                    () => const ContactView(),
+                                    transition: Transition.cupertino,
                                   ),
                                 ),
                                 _divider(),
                                 _tile(
                                   icon: Icons.help_outline,
                                   label: "Help & FAQs",
-                                  onTap: () => Get.snackbar(
-                                    "Help & FAQs",
-                                    "Dummy action",
-                                    backgroundColor: Colors.black87,
-                                    colorText: _white,
-                                    snackPosition: SnackPosition.BOTTOM,
+                                  onTap: () => Get.to(
+                                    () => const HelpView(),
+                                    transition: Transition.cupertino,
                                   ),
                                 ),
                                 _divider(),
@@ -327,12 +323,9 @@ class _ProfileViewState extends State<ProfileView> {
                                 _tile(
                                   icon: Icons.call_outlined,
                                   label: "Contact Us",
-                                  onTap: () => Get.snackbar(
-                                    "Contact Us",
-                                    "Dummy action",
-                                    backgroundColor: Colors.black87,
-                                    colorText: _white,
-                                    snackPosition: SnackPosition.BOTTOM,
+                                  onTap: () => Get.to(
+                                    () => const ContactView(),
+                                    transition: Transition.cupertino,
                                   ),
                                 ),
                                 _divider(),
@@ -341,12 +334,9 @@ class _ProfileViewState extends State<ProfileView> {
                                 _tile(
                                   icon: Icons.help_outline,
                                   label: "Help & FAQs",
-                                  onTap: () => Get.snackbar(
-                                    "Help & FAQs",
-                                    "Dummy action",
-                                    backgroundColor: Colors.black87,
-                                    colorText: _white,
-                                    snackPosition: SnackPosition.BOTTOM,
+                                  onTap: () => Get.to(
+                                    () => const HelpView(),
+                                    transition: Transition.cupertino,
                                   ),
                                 ),
                                 _divider(),

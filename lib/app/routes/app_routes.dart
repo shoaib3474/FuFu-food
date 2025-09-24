@@ -23,6 +23,8 @@ abstract class Routes {
   static const EDIT_ADDRESS = _Paths.EDIT_ADDRESS;
   static const PAYMENT = _Paths.PAYMENT;
   static const PICK_LOCATION = _Paths.PICK_LOCATION;
+  static const HELP = _Paths.HELP;
+  static const CONTACT = _Paths.CONTACT;
 }
 
 abstract class _Paths {
@@ -47,4 +49,6 @@ abstract class _Paths {
   static const EDIT_ADDRESS = '/edit_address';
   static const PAYMENT = '/payment';
   static const PICK_LOCATION = '/pick_location';
+  static const HELP = "/help";
+  static const CONTACT = "/contact";
 }
