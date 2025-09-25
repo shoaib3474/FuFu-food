@@ -24,7 +24,6 @@ import '../widget/popular_item_section.dart';
 import 'offerwidget.dart';
 import '../../cart/controllers/cart_controller.dart';
 
-
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
   @override
