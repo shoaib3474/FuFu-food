@@ -67,7 +67,7 @@ class _DashboardScreenState extends State<DashboardView> {
                 SnackBar(
                   content: Text(
                     'PRESS_BACK_AGAIN_TO_EXIT'.tr,
-                    style: TextStyle(color: Colors.white),
+                    style: const TextStyle(color: Colors.white),
                   ),
                   behavior: SnackBarBehavior.floating,
                   backgroundColor: AppColor.primaryColor,

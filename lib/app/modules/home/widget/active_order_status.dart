@@ -34,10 +34,7 @@ class _ActiveOrderStatusState extends State<ActiveOrderStatus>
     _offsetAnimation = Tween<Offset>(
       begin: const Offset(0.0, 1.0),
       end: Offset.zero,
-    ).animate(CurvedAnimation(
-      parent: _controller,
-      curve: Curves.easeOutBack,
-    ));
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeOutBack));
 
     _controller.forward();
 
@@ -68,15 +65,15 @@ class _ActiveOrderStatusState extends State<ActiveOrderStatus>
   String _getStatusText(int status) {
     switch (status) {
       case 1:
-        return "YOOUR_ORDER_IS_PLACED_SUCCESSFULLY".tr;
+        return "YOUR_ORDER_IS_PLACED".tr;
       case 4:
-        return "YOUR_ORDER_HAS_BEEN_ACCEPTED".tr;
+        return "YOUR_ORDER_IS_ACCEPTED".tr;
       case 7:
-        return "RESTAURANT_IS_PREPARING_YOUR_FOOD".tr;
+        return "THE_CHEF_IS_PREPARING_YOUR_FOOD".tr;
       case 10:
-        return "YOUR_FOOD_IS_ON_THE_WAY".tr;
+        return "THE_DELIVERY_MAN_IS_ON_THE_WAY".tr;
       default:
-        return "PROCESSING".tr;
+        return "PREPARING".tr;
     }
   }
 

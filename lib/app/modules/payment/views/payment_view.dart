@@ -127,12 +127,12 @@ class _PaymentViewState extends State<PaymentView> {
             children: [
               isLoading
                   ? const Center(
-                    child: CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation<Color>(
-                        AppColor.primaryColor,
+                      child: CircularProgressIndicator(
+                        valueColor: AlwaysStoppedAnimation<Color>(
+                          AppColor.primaryColor,
+                        ),
                       ),
-                    ),
-                  )
+                    )
                   : const SizedBox.shrink(),
             ],
           ),
@@ -257,10 +257,7 @@ class MyInAppBrowser extends InAppBrowser {
                         Wrap(
                           children: [
                             Center(
-                              child: Text(
-                                "YOUR_PAYMENT_HAS_BEEN_CONFIRMED".tr,
-                                style: fontMedium,
-                              ),
+                              child: Text("SUCCESS".tr, style: fontMedium),
                             ),
                             Center(
                               child: Lottie.asset(

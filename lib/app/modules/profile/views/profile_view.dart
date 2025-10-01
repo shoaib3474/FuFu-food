@@ -155,10 +155,9 @@ class _ProfileViewState extends State<ProfileView> {
                                         children: [
                                           Text(
                                             (box.read('isLogedIn') == true
-                                                    ? (c.profileData.name ??
-                                                          'User')
-                                                    : 'guest')
-                                                .toString(),
+                                                ? (c.profileData.name ??
+                                                      'USER'.tr)
+                                                : 'GUEST'.tr),
                                             maxLines: 1,
                                             overflow: TextOverflow.ellipsis,
                                             style: TextStyle(
@@ -170,10 +169,9 @@ class _ProfileViewState extends State<ProfileView> {
                                           SizedBox(height: 2.h),
                                           Text(
                                             (box.read('isLogedIn') == true
-                                                    ? (c.profileData.email ??
-                                                          'user@example.com')
-                                                    : 'guest@gmail.com')
-                                                .toString(),
+                                                ? (c.profileData.email ??
+                                                      'USER_EXAMPLE_EMAIL'.tr)
+                                                : 'GUEST_EXAMPLE_EMAIL'.tr),
                                             maxLines: 1,
                                             overflow: TextOverflow.ellipsis,
                                             style: TextStyle(
@@ -193,7 +191,7 @@ class _ProfileViewState extends State<ProfileView> {
                                 // menu items
                                 _tile(
                                   icon: Icons.shopping_bag_outlined,
-                                  label: "My Orders",
+                                  label: 'MY_ORDERS'.tr,
                                   onTap: () => Get.to(
                                     () => const OrderView(),
                                     transition: Transition.cupertino,
@@ -202,7 +200,7 @@ class _ProfileViewState extends State<ProfileView> {
                                 _divider(),
                                 _tile(
                                   icon: Icons.person_outline,
-                                  label: "My Profile",
+                                  label: 'MY_PROFILE'.tr,
                                   onTap: () => Get.to(
                                     () => EditProfileView(),
                                     transition: Transition.cupertino,
@@ -211,7 +209,7 @@ class _ProfileViewState extends State<ProfileView> {
                                 _divider(),
                                 _tile(
                                   icon: Icons.location_on_outlined,
-                                  label: "Delivery Address",
+                                  label: 'DELIVERY_ADDRESS'.tr,
                                   onTap: () => Get.to(
                                     () => const ProfileAddressView(),
                                     transition: Transition.cupertino,
@@ -232,7 +230,7 @@ class _ProfileViewState extends State<ProfileView> {
                                 _divider(),
                                 _tile(
                                   icon: Icons.call_outlined,
-                                  label: "Contact Us",
+                                  label: 'CONTACT_US'.tr,
                                   onTap: () => Get.to(
                                     () => const ContactView(),
                                     transition: Transition.cupertino,
@@ -241,7 +239,7 @@ class _ProfileViewState extends State<ProfileView> {
                                 _divider(),
                                 _tile(
                                   icon: Icons.help_outline,
-                                  label: "Help & FAQs",
+                                  label: 'HELP_AND_FAQS'.tr,
                                   onTap: () => Get.to(
                                     () => const HelpView(),
                                     transition: Transition.cupertino,
@@ -250,7 +248,7 @@ class _ProfileViewState extends State<ProfileView> {
                                 _divider(),
                                 _tile(
                                   icon: Icons.settings_outlined,
-                                  label: "Settings",
+                                  label: 'SETTINGS'.tr,
                                   onTap: () => Get.to(
                                     () => const ChangeLanguageView(),
                                     transition: Transition.cupertino,
@@ -259,7 +257,7 @@ class _ProfileViewState extends State<ProfileView> {
                                 _divider(),
                                 _tile(
                                   icon: Icons.lock_outline,
-                                  label: "Change Password",
+                                  label: 'CHANGE_PASSWORD'.tr,
                                   onTap: () => Get.to(
                                     () => ChangePasswordView(),
                                     transition: Transition.cupertino,
@@ -270,7 +268,7 @@ class _ProfileViewState extends State<ProfileView> {
                                 // logout
                                 _tile(
                                   icon: Icons.logout_rounded,
-                                  label: "Log Out",
+                                  label: 'LOG_OUT'.tr,
                                   onTap: () {
                                     if (box.read('isLogedIn') == true) {
                                       box.write('isLogedIn', false);
@@ -310,7 +308,7 @@ class _ProfileViewState extends State<ProfileView> {
                               children: [
                                 // Section title
                                 Text(
-                                  "Quick Access",
+                                  'QUICK_ACCESS'.tr,
                                   style: TextStyle(
                                     fontSize: 16.sp,
                                     fontWeight: FontWeight.bold,
@@ -322,7 +320,7 @@ class _ProfileViewState extends State<ProfileView> {
                                 // Contact Us
                                 _tile(
                                   icon: Icons.call_outlined,
-                                  label: "Contact Us",
+                                  label: 'CONTACT_US'.tr,
                                   onTap: () => Get.to(
                                     () => const ContactView(),
                                     transition: Transition.cupertino,
@@ -333,7 +331,7 @@ class _ProfileViewState extends State<ProfileView> {
                                 // Help & FAQs
                                 _tile(
                                   icon: Icons.help_outline,
-                                  label: "Help & FAQs",
+                                  label: 'HELP_AND_FAQS'.tr,
                                   onTap: () => Get.to(
                                     () => const HelpView(),
                                     transition: Transition.cupertino,
@@ -344,7 +342,7 @@ class _ProfileViewState extends State<ProfileView> {
                                 // Settings
                                 _tile(
                                   icon: Icons.settings_outlined,
-                                  label: "Settings",
+                                  label: 'SETTINGS'.tr,
                                   onTap: () => Get.to(
                                     () => const ChangeLanguageView(),
                                     transition: Transition.cupertino,
@@ -370,7 +368,7 @@ class _ProfileViewState extends State<ProfileView> {
                                       transition: Transition.cupertino,
                                     ),
                                     child: Text(
-                                      "Login Now",
+                                      'LOGIN_NOW'.tr,
                                       style: TextStyle(
                                         fontSize: 15.sp,
                                         fontWeight: FontWeight.w600,

@@ -257,4 +257,12 @@ Map<String, String> english = {
   'ITEM_NUMBERS': '@number Items',
   'ORDER_REJECTED': 'Order Rejected',
   'REASON:': 'Reason:',
+  'GUEST': 'Guest',
+  'USER': 'User',
+  'USER_EXAMPLE_EMAIL': 'user@example.com',
+  'GUEST_EXAMPLE_EMAIL': 'guest@gmail.com',
+  'HELP_AND_FAQS': 'Help & FAQs',
+  'SETTINGS': 'Settings',
+  'QUICK_ACCESS': 'Quick Access',
+  'LOGIN_NOW': 'Login Now',
 };

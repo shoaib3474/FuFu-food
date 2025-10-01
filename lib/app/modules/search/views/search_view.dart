@@ -49,7 +49,6 @@ class _SearchViewState extends State<SearchView> {
             onTap: () {
               searchController.getData();
             },
-            child: Text('Search', style: fontBoldWithColorBlack),
             child: Text('SEARCH'.tr, style: fontBoldWithColorBlack),
           ),
           centerTitle: false,

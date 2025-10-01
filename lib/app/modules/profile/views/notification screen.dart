@@ -16,6 +16,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Home Page"),
+        title: Text("HOME_PAGE".tr),
         backgroundColor: Colors.orange,
         actions: [
           IconButton(
@@ -33,6 +34,7 @@ class HomePage extends StatelessWidget {
       ),
       body: Center(
         child: Text("Main Content"),
+        child: Text("MAIN_CONTENT".tr),
       ),
     );
   }
@@ -86,6 +88,8 @@ class NotificationsPage extends StatelessWidget {
                   child: Text(
                     "Notifications",
                     style: TextStyle(
+                    "NOTIFICATIONS".tr,
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 22,
                       fontWeight: FontWeight.bold,
@@ -94,6 +98,7 @@ class NotificationsPage extends StatelessWidget {
                 ),
 
                 Divider(color: Colors.white60),
+                const Divider(color: Colors.white60),
 
                 /// List
                 Expanded(
@@ -110,6 +115,7 @@ class NotificationsPage extends StatelessWidget {
                         ),
                         title: Text(
                           item["text"],
+                          item["text"].toString().tr,
                           style: TextStyle(color: Colors.white, fontSize: 14),
                         ),
                         onTap: () {
@@ -143,6 +149,7 @@ class DetailPage extends StatelessWidget {
       backgroundColor: Colors.orange.shade50,
       appBar: AppBar(
         backgroundColor: Color(0xFFFF6433),
+        backgroundColor: const Color(0xFFFF6433),
         title: Text("Detail"),
       ),
       body: Center(
