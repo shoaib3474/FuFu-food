@@ -1,5 +1,5 @@
-
 Map<String, String> its = {
+  'DETAILS': 'Dettagli',
   'ADD_NOTE': 'Aggiungi nota (maionese extra, formaggio, ecc.)',
   'CHECKOUT': 'Cassa',
   'APPARTMENT_&_FLAT_NO': 'Appartamento & Numero',
@@ -115,9 +115,12 @@ Map<String, String> its = {
   'ADDONS': 'Aggiunte',
   'SPECIAL_INSTRUCTIONS': 'Istruzioni speciali',
   'ADD_TO_CARTS': 'Aggiungi al carrello',
-  'ARE_YOU_SURE_TO_CANCEL_THIS_ORDER': 'Sei sicuro di voler annullare questo ordine?',
-  'ARE_YOU_SURE_DELETE_THIS_ACCOUNT': 'Sei sicuro di voler eliminare questo account?',
-  'ARE_YOU_SURE_WANT_TO_CLOSE_THIS_PAYMENT_SESSION': 'Sei sicuro di voler chiudere questa sessione di pagamento?',
+  'ARE_YOU_SURE_TO_CANCEL_THIS_ORDER':
+      'Sei sicuro di voler annullare questo ordine?',
+  'ARE_YOU_SURE_DELETE_THIS_ACCOUNT':
+      'Sei sicuro di voler eliminare questo account?',
+  'ARE_YOU_SURE_WANT_TO_CLOSE_THIS_PAYMENT_SESSION':
+      'Sei sicuro di voler chiudere questa sessione di pagamento?',
   'CLOSE': 'Chiudi',
   'CANCEL': 'Annulla',
   'MAIN_DISH': 'Piatto principale',
@@ -154,13 +157,16 @@ Map<String, String> its = {
   'SEE_ORDER_DETAILS': 'Visualizza dettagli ordine',
   'TYPE_A_MESSAGE': 'Digita un messaggio',
   'YOUR_CART_IS_EMPTY': 'Il tuo carrello è vuoto',
-  'LOOKS_LIKE_YOU_HAVENT_ADDED_ANYTHING': 'Sembra che tu non abbia ancora aggiunto nulla al tuo carrello!',
+  'LOOKS_LIKE_YOU_HAVENT_ADDED_ANYTHING':
+      'Sembra che tu non abbia ancora aggiunto nulla al tuo carrello!',
   'GO_SHOP': 'Vai a fare acquisti',
   'LOST_CONNECTION': 'Connessione persa',
-  'LOST_CONNECTION_DESCRIPTION': 'Ops, nessuna connessione internet trovata. Per favore, controlla la tua connessione.',
+  'LOST_CONNECTION_DESCRIPTION':
+      'Ops, nessuna connessione internet trovata. Per favore, controlla la tua connessione.',
   'TRY_AGAIN': 'Riprova',
   'RESULT_NOT_FOUND': 'Risultato non trovato',
-  'RESULT_NOT_FOUND_DESCRIPTION': 'Per favore, prova con altre parole chiave o usa un termine più generico',
+  'RESULT_NOT_FOUND_DESCRIPTION':
+      'Per favore, prova con altre parole chiave o usa un termine più generico',
   'PROFILE_UPDATE': 'Profilo aggiornato',
   'PROFILE_UPDATE_SUCCESSFULLY': 'Profilo aggiornato con successo',
   'PASSWORD_UPDATE_SUCCESSFULLY': 'Password aggiornata con successo',
@@ -174,12 +180,15 @@ Map<String, String> its = {
   'CONFIRM_NEW_PASSWORD': 'Conferma nuova password',
   'PLEASE_ADD_DELIVERY_ADDRESS': 'Per favore, aggiungi il tuo indirizzo',
   'PLEASE_CHOOSE_AN_ADDRESS': 'Per favore, scegli un indirizzo',
-  'CURRENTLY_NOT_ACCEPTING_ANY_ORDER': 'Al momento non stiamo accettando ordini!',
+  'CURRENTLY_NOT_ACCEPTING_ANY_ORDER':
+      'Al momento non stiamo accettando ordini!',
   'NOT_ACCEPTING_ANY_ORDER': 'Nessun ordine viene accettato!',
   'PRESS_BACK_AGAIN_TO_EXIT': 'Premi di nuovo indietro per uscire.',
-  'YOOUR_ORDER_IS_PLACED_SUCCESSFULLY': 'Il tuo ordine è stato effettuato con successo',
+  'YOOUR_ORDER_IS_PLACED_SUCCESSFULLY':
+      'Il tuo ordine è stato effettuato con successo',
   'YOUR_ORDER_HAS_BEEN_ACCEPTED': 'Il tuo ordine è stato accettato.',
-  'RESTAURANT_IS_PREPARING_YOUR_FOOD': 'Il ristorante sta preparando il tuo cibo.',
+  'RESTAURANT_IS_PREPARING_YOUR_FOOD':
+      'Il ristorante sta preparando il tuo cibo.',
   'YOUR_FOOD_IS_ON_THE_WAY': 'Il tuo cibo è in arrivo.',
   'IT_WILL_TAKE_LESS_THAN': 'Ci vorranno meno di ',
   'MINUTES_TO_GET_YOUR_FOOD': ' minuti per ricevere il tuo cibo.',
@@ -189,8 +198,10 @@ Map<String, String> its = {
   'NON_VEG': 'Non vegetariano',
   'OFFER_ITEM_LIST': 'Elenco articoli in offerta',
   'ORDER_CONFIRMED': 'Ordine confermato',
-  'CONFIRMED_COD': 'Il tuo ordine è stato confermato come pagamento alla consegna.',
-  'CONFIRMED_COD_1': 'Il tuo ordine è stato confermato come pagamento alla consegna. Puoi pagare ora scegliendo uno dei nostri metodi di pagamento.',
+  'CONFIRMED_COD':
+      'Il tuo ordine è stato confermato come pagamento alla consegna.',
+  'CONFIRMED_COD_1':
+      'Il tuo ordine è stato confermato come pagamento alla consegna. Puoi pagare ora scegliendo uno dei nostri metodi di pagamento.',
   'CONFIRMED_PNP': 'Il tuo ordine è stato confermato come Ritira e paga.',
   'THANK_YOU_FOR_YOUR_ORDER': 'Grazie per il tuo ordine.',
   'GO_TO_ORDER_DETAILS': 'Vai ai dettagli dell\'ordine',
@@ -207,8 +218,10 @@ Map<String, String> its = {
   'FAILED_TO_PLACE_ORDER': 'Impossibile effettuare l\'ordine!',
   'VIEW_CART': 'Visualizza carrello',
   'ITEMS_ADDED': 'Articoli aggiunti',
-  'IMAGE_SHOULD_BE_LESS_THAN_2MB': 'La dimensione dell\'immagine deve essere inferiore a 2MB',
-  'PROFILE_IMAGE_SAVED_SUCCESSFULLY': 'Immagine del profilo salvata con successo',
+  'IMAGE_SHOULD_BE_LESS_THAN_2MB':
+      'La dimensione dell\'immagine deve essere inferiore a 2MB',
+  'PROFILE_IMAGE_SAVED_SUCCESSFULLY':
+      'Immagine del profilo salvata con successo',
   'ADDRESS_SAVED_SUCCESSFULLY': 'Indirizzo salvato con successo',
   'ADDRESS_UPDATED_SUCCESSFULLY': 'Indirizzo aggiornato con successo',
   'ADDRESS_DELETED_SUCCESSFULLY': 'Indirizzo eliminato con successo',
@@ -229,7 +242,8 @@ Map<String, String> its = {
   'ENTER_VALID_EMAIL': 'Inserisci un\'e-mail valida',
   'PLEASE_TYPE_PASSWORD': 'Per favore, digita la tua password',
   'LOCATION_SERVICE_DENIED': 'Servizio di localizzazione negato!',
-  'LOCATION_PERMISSION_NOT_ENABLED': 'Permesso di localizzazione non abilitato!',
+  'LOCATION_PERMISSION_NOT_ENABLED':
+      'Permesso di localizzazione non abilitato!',
   'PAYMENT_FAILED': 'Pagamento digitale fallito!',
   'YOUR_ORDER_IS_READY_FOR_DELIVERY': 'Il tuo ordine è pronto per la consegna.',
   'PREPARED': 'Preparato',

@@ -24,9 +24,12 @@ Widget itemCardList1(dynamic item, int index, BuildContext context) {
   final String desc = (data.description ?? '').toString();
   final String basePrice = data.currencyPrice ?? '';
   final bool hasOffer =
-  (data.offer != null && data.offer is List && (data.offer as List).isNotEmpty);
-  final String finalPrice =
-  hasOffer ? (data.offer[0].currencyPrice ?? basePrice) : basePrice;
+      (data.offer != null &&
+      data.offer is List &&
+      (data.offer as List).isNotEmpty);
+  final String finalPrice = hasOffer
+      ? (data.offer[0].currencyPrice ?? basePrice)
+      : basePrice;
 
   // Try to read a rating if present (fallback: null → hide)
   final double? rating = _extractRating(data);
@@ -51,8 +54,9 @@ Widget itemCardList1(dynamic item, int index, BuildContext context) {
                 GestureDetector(
                   onTap: () async {
                     // Image tap behaves like ADD → open Item bottom sheet
-                    await Get.find<HomeController>()
-                        .getItemDetails(itemID: data.id!);
+                    await Get.find<HomeController>().getItemDetails(
+                      itemID: data.id!,
+                    );
                     showBottomSheet(
                       context: context,
                       backgroundColor: Colors.transparent,
@@ -167,7 +171,10 @@ Widget itemCardList1(dynamic item, int index, BuildContext context) {
                     );
                   },
                   child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 6.h),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 8.w,
+                      vertical: 6.h,
+                    ),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(12.r),
@@ -192,7 +199,7 @@ Widget itemCardList1(dynamic item, int index, BuildContext context) {
                         ),
                         SizedBox(width: 6.w),
                         Text(
-                          "Details",
+                          "DETAILS".tr,
                           style: TextStyle(
                             fontFamily: 'Rubik',
                             fontWeight: FontWeight.w500,
@@ -208,8 +215,9 @@ Widget itemCardList1(dynamic item, int index, BuildContext context) {
                 // ADD → same action as tapping the image (open ItemView)
                 InkWell(
                   onTap: () async {
-                    await Get.find<HomeController>()
-                        .getItemDetails(itemID: data.id!);
+                    await Get.find<HomeController>().getItemDetails(
+                      itemID: data.id!,
+                    );
                     showBottomSheet(
                       context: context,
                       backgroundColor: Colors.transparent,
@@ -219,7 +227,10 @@ Widget itemCardList1(dynamic item, int index, BuildContext context) {
                     );
                   },
                   child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 10.w,
+                      vertical: 6.h,
+                    ),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(16.r),
                       color: Colors.white,
@@ -256,7 +267,9 @@ Widget itemCardList1(dynamic item, int index, BuildContext context) {
                         SizedBox(width: 4.w),
                         Text(
                           "ADD".tr,
-                          style: fontRegularBoldwithColor.copyWith(fontSize: 12.sp),
+                          style: fontRegularBoldwithColor.copyWith(
+                            fontSize: 12.sp,
+                          ),
                         ),
                       ],
                     ),
@@ -322,17 +335,16 @@ double? _extractRating(dynamic d) {
   return null; // hide chip if absent
 }
 
-
 Widget itemGridList3(List<dynamic> items, BuildContext context) {
   return GridView.builder(
     padding: EdgeInsets.all(12.w),
     shrinkWrap: true,
     physics: BouncingScrollPhysics(),
     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-      crossAxisCount: 2,              // ✅ 2 cards per row
-      mainAxisSpacing: 12.h,          // vertical space
-      crossAxisSpacing: 12.w,         // horizontal space
-      childAspectRatio: 0.70,         // adjust card height/width
+      crossAxisCount: 2, // ✅ 2 cards per row
+      mainAxisSpacing: 12.h, // vertical space
+      crossAxisSpacing: 12.w, // horizontal space
+      childAspectRatio: 0.70, // adjust card height/width
     ),
     itemCount: items.length,
     itemBuilder: (context, index) {

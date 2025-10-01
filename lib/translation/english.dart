@@ -1,4 +1,5 @@
 Map<String, String> english = {
+  'DETAILS': 'Details',
   'ADD_NOTE': 'Add note (extra mayo, cheese, etc.)',
   'CHECKOUT': 'Checkout',
   'APPARTMENT_&_FLAT_NO': 'Appartment & Flat No',

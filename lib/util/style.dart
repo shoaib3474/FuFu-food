@@ -95,7 +95,7 @@ final fontRegularBold = TextStyle(
 );
 final fontRegularBoldWithCurrency = GoogleFonts.roboto(
   fontWeight: FontWeight.w500,
-  fontSize: 14.sp,
+  fontSize: 11.sp, // reduced from 14.sp
 );
 final fontRegularBoldwithWhiteColor = TextStyle(
   fontFamily: 'Rubik',
@@ -159,15 +159,17 @@ final fontBold = TextStyle(
   fontSize: Dimensions.fontSizeExtraLarge.sp,
 );
 final fontBoldWithColor = TextStyle(
-    fontFamily: 'Rubik',
-    fontWeight: FontWeight.w600,
-    fontSize: 14.sp,
-    color: AppColor.primaryColor);
+  fontFamily: 'Rubik',
+  fontWeight: FontWeight.w600,
+  fontSize: 14.sp,
+  color: AppColor.primaryColor,
+);
 final fontBoldWithColorBlack = TextStyle(
-    fontFamily: 'Rubik',
-    fontWeight: FontWeight.w600,
-    fontSize: Dimensions.fontSizeExtraLarge.sp,
-    color: Colors.black);
+  fontFamily: 'Rubik',
+  fontWeight: FontWeight.w600,
+  fontSize: Dimensions.fontSizeExtraLarge.sp,
+  color: Colors.black,
+);
 
 final fontBlack = TextStyle(
   fontFamily: 'Rubik',
@@ -181,13 +183,15 @@ final fontSizeExtraLarge22 = TextStyle(
 );
 
 final fontProfile = TextStyle(
-    fontFamily: 'Rubik',
-    fontSize: 14,
-    fontWeight: FontWeight.w500,
-    color: AppColor.fontColor);
+  fontFamily: 'Rubik',
+  fontSize: 14,
+  fontWeight: FontWeight.w500,
+  color: AppColor.fontColor,
+);
 
 final fontProfileLite = TextStyle(
-    fontFamily: 'Rubik',
-    fontSize: 14,
-    fontWeight: FontWeight.w400,
-    color: AppColor.fontColor);
+  fontFamily: 'Rubik',
+  fontSize: 14,
+  fontWeight: FontWeight.w400,
+  color: AppColor.fontColor,
+);
