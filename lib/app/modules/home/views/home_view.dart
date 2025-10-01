@@ -48,6 +48,17 @@ class _HomeViewState extends State<HomeView> {
     super.initState();
   }
 
+  String getGreeting() {
+    final hour = DateTime.now().hour;
+    if (hour < 12) {
+      return 'GOOD_MORNING'.tr;
+    }
+    if (hour < 17) {
+      return 'GOOD_AFTERNOON'.tr;
+    }
+    return 'GOOD_EVENING'.tr;
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -101,8 +112,8 @@ class _HomeViewState extends State<HomeView> {
                                     const SizedBox(width: 8),
                                     Text(
                                       "Search",
-                                      style: TextStyle(
-                                        color: Colors.grey.shade600,
+                                      style: const TextStyle(
+                                        color: Colors.grey,
                                         fontSize: 14,
                                       ),
                                     ),
@@ -217,17 +228,17 @@ class _HomeViewState extends State<HomeView> {
                       ),
                       const SizedBox(height: 14),
                       // Greeting texts
-                      const Text(
-                        "Good Morning",
-                        style: TextStyle(
+                      Text(
+                        getGreeting(),
+                        style: const TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                           color: Colors.black,
                         ),
                       ),
-                      const Text(
-                        "Rise And Shine! It’s Breakfast Time",
-                        style: TextStyle(
+                      Text(
+                        "RISE_AND_SHINE".tr,
+                        style: const TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.w500,
                           color: Colors.red,

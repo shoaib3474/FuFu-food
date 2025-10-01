@@ -8,6 +8,7 @@ import '../../../../widget/item_caution.dart';
 import '../../item/views/item_view.dart';
 import '../controllers/home_controller.dart';
 import '../views/bestseller.dart';
+
 Widget BestItemSection() {
   return GetBuilder<HomeController>(
     builder: (homeController) => Column(
@@ -15,22 +16,23 @@ Widget BestItemSection() {
       children: [
         /// Header
         Padding(
-          padding:
-          EdgeInsets.only(top: 10.h, bottom: 8.h, left: 6.w, right: 6.w),
+          padding: EdgeInsets.only(
+            top: 10.h,
+            bottom: 8.h,
+            left: 6.w,
+            right: 6.w,
+          ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                "Best seller",
-                style: fontBold.copyWith(fontSize: 18.sp),
-              ),
+              Text("BEST_SELLER".tr, style: fontBold.copyWith(fontSize: 18.sp)),
               GestureDetector(
                 onTap: () {
                   Get.to(BestsellerView());
                   // TODO: Navigate to all items screen
                 },
                 child: Text(
-                  "See All".tr,
+                  "SEE_ALL".tr,
                   style: fontBold.copyWith(
                     fontSize: 14.sp,
                     color: Colors.deepOrange,
@@ -70,8 +72,9 @@ Widget BestItemSection() {
                       left: 8,
                       child: InkWell(
                         onTap: () async {
-                          await Get.find<HomeController>()
-                              .getItemDetails(itemID: item.id!);
+                          await Get.find<HomeController>().getItemDetails(
+                            itemID: item.id!,
+                          );
 
                           showBottomSheet(
                             context: context,
@@ -83,7 +86,9 @@ Widget BestItemSection() {
                         },
                         child: Container(
                           padding: EdgeInsets.symmetric(
-                              vertical: 4.h, horizontal: 8.w),
+                            vertical: 4.h,
+                            horizontal: 8.w,
+                          ),
                           decoration: BoxDecoration(
                             color: Colors.deepOrange,
                             borderRadius: BorderRadius.circular(8.r),

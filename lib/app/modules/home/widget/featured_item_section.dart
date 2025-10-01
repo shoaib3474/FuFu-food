@@ -29,17 +29,14 @@ Widget featureditemSection() {
             children: [
               SizedBox(
                 height: 24.h,
-                child: Text(
-                  "FEATURED_ITEMS".tr,
-                  style: fontBold,
-                ),
+                child: Text("FEATURED_ITEMS".tr, style: fontBold),
               ),
               const Spacer(),
               // (Optional) quick nav to Favorites screen
               IconButton(
                 onPressed: () => Get.to(() => const FavoritesScreen()),
                 icon: const Icon(Icons.favorite),
-                tooltip: 'Favorites',
+                tooltip: 'FAVORITES'.tr,
               ),
             ],
           ),
@@ -61,7 +58,11 @@ Widget featureditemSection() {
             return Stack(
               children: [
                 // Your original card
-                itemCardGrid(homeController.featuredItemDataList, index, context),
+                itemCardGrid(
+                  homeController.featuredItemDataList,
+                  index,
+                  context,
+                ),
 
                 // Heart overlay
                 Positioned(
@@ -77,8 +78,6 @@ Widget featureditemSection() {
     ),
   );
 }
-
-
 
 // import 'package:flutter/cupertino.dart';
 // import 'package:flutter/material.dart';
@@ -110,7 +109,7 @@ class FavoritesScreen extends StatelessWidget {
           onPressed: () => Get.back(),
         ),
         title: Text(
-          'Favorites',
+          'FAVORITES'.tr,
           style: Theme.of(context).textTheme.titleMedium?.copyWith(
             fontWeight: FontWeight.w700,
             color: Colors.white,
@@ -146,8 +145,9 @@ class FavoritesScreen extends StatelessWidget {
                 child: Container(
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius:
-                    BorderRadius.vertical(top: Radius.circular(28.r)),
+                    borderRadius: BorderRadius.vertical(
+                      top: Radius.circular(28.r),
+                    ),
                   ),
                 ),
               ),
@@ -161,7 +161,7 @@ class FavoritesScreen extends StatelessWidget {
                 child: Padding(
                   padding: EdgeInsets.all(24.w),
                   child: Text(
-                    'No favorites yet.\nTap the heart on any product to save it here.',
+                    'NO_FAVORITES_YET'.tr,
                     textAlign: TextAlign.center,
                     style: Theme.of(context).textTheme.bodyLarge,
                   ),
@@ -178,7 +178,7 @@ class FavoritesScreen extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 18.w),
                   child: Text(
-                    "It's time to buy your favorite dish.",
+                    "BUY_YOUR_FAVORITE_DISH".tr,
                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
                       color: _accentRed,
                       fontWeight: FontWeight.w700,
@@ -188,12 +188,13 @@ class FavoritesScreen extends StatelessWidget {
                 12.verticalSpace,
                 Expanded(
                   child: Padding(
-                    padding:
-                    EdgeInsets.symmetric(horizontal: 14.w, vertical: 6.h),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 14.w,
+                      vertical: 6.h,
+                    ),
                     child: GridView.builder(
                       physics: const BouncingScrollPhysics(),
-                      gridDelegate:
-                      SliverGridDelegateWithFixedCrossAxisCount(
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2,
                         mainAxisSpacing: 14.h,
                         crossAxisSpacing: 14.w,

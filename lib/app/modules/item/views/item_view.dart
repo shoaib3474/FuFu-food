@@ -1624,7 +1624,7 @@ Widget multiVariation(context, ItemData itemdetails) {
                           borderRadius: BorderRadius.circular(15.r),
                         ),
                       ),
-                      hint: Text('Select Options', style: fontRegular),
+                      hint: Text('SELECT_OPTIONS'.tr, style: fontRegular),
                       items: _addVaritionItems(
                         itemdetails.variations![itemdetails
                             .itemAttributes![index]

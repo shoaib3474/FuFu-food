@@ -4,10 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 void main() {
-  runApp(GetMaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: HomePage(),
-  ));
+  runApp(GetMaterialApp(debugShowCheckedModeBanner: false, home: HomePage()));
 }
 
 class HomePage extends StatelessWidget {
@@ -15,7 +12,6 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Home Page"),
         title: Text("HOME_PAGE".tr),
         backgroundColor: Colors.orange,
         actions: [
@@ -24,7 +20,7 @@ class HomePage extends StatelessWidget {
             onPressed: () {
               /// Open half screen overlay
               Get.to(
-                    () => NotificationsPage(),
+                () => NotificationsPage(),
                 transition: Transition.rightToLeft,
                 duration: Duration(milliseconds: 400),
               );
@@ -32,10 +28,7 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-      body: Center(
-        child: Text("Main Content"),
-        child: Text("MAIN_CONTENT".tr),
-      ),
+      body: Center(child: Text("MAIN_CONTENT".tr)),
     );
   }
 }
@@ -44,20 +37,11 @@ class NotificationsPage extends StatelessWidget {
   final List<Map<String, dynamic>> notifications = [
     {
       "icon": Icons.restaurant_menu,
-      "text": "We have added a product you might like."
+      "text": "We have added a product you might like.",
     },
-    {
-      "icon": Icons.favorite,
-      "text": "One of your favorite is on promotion."
-    },
-    {
-      "icon": Icons.shopping_bag,
-      "text": "Your order has been delivered"
-    },
-    {
-      "icon": Icons.delivery_dining,
-      "text": "The delivery is on his way"
-    },
+    {"icon": Icons.favorite, "text": "One of your favorite is on promotion."},
+    {"icon": Icons.shopping_bag, "text": "Your order has been delivered"},
+    {"icon": Icons.delivery_dining, "text": "The delivery is on his way"},
   ];
 
   @override
@@ -86,8 +70,6 @@ class NotificationsPage extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(20.0),
                   child: Text(
-                    "Notifications",
-                    style: TextStyle(
                     "NOTIFICATIONS".tr,
                     style: const TextStyle(
                       color: Colors.white,
@@ -97,15 +79,17 @@ class NotificationsPage extends StatelessWidget {
                   ),
                 ),
 
-                Divider(color: Colors.white60),
                 const Divider(color: Colors.white60),
 
                 /// List
                 Expanded(
                   child: ListView.separated(
                     itemCount: notifications.length,
-                    separatorBuilder: (_, __) =>
-                        Divider(color: Colors.white60, indent: 20, endIndent: 20),
+                    separatorBuilder: (_, __) => Divider(
+                      color: Colors.white60,
+                      indent: 20,
+                      endIndent: 20,
+                    ),
                     itemBuilder: (context, index) {
                       final item = notifications[index];
                       return ListTile(
@@ -114,13 +98,12 @@ class NotificationsPage extends StatelessWidget {
                           child: Icon(item["icon"], color: Color(0xFFFF6433)),
                         ),
                         title: Text(
-                          item["text"],
                           item["text"].toString().tr,
                           style: TextStyle(color: Colors.white, fontSize: 14),
                         ),
                         onTap: () {
                           Get.to(
-                                () => DetailPage(message: item["text"]),
+                            () => DetailPage(message: item["text"]),
                             transition: Transition.leftToRight,
                             duration: Duration(milliseconds: 300),
                           );
@@ -148,7 +131,6 @@ class DetailPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.orange.shade50,
       appBar: AppBar(
-        backgroundColor: Color(0xFFFF6433),
         backgroundColor: const Color(0xFFFF6433),
         title: Text("Detail"),
       ),
