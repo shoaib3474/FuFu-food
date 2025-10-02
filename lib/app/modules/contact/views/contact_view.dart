@@ -21,8 +21,8 @@ class ContactView extends GetView<ContactController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Contact Us"),
-        backgroundColor: Color(0xFFE65A2A),
+        title: Text("CONTACT_US".tr),
+        backgroundColor: const Color(0xFFE65A2A),
       ),
 
       body: SingleChildScrollView(
@@ -32,7 +32,7 @@ class ContactView extends GetView<ContactController> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "We’d love to hear from you!",
+                "WE_D_LIKE_TO_HEAR".tr,
                 style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                   fontWeight: FontWeight.bold,
                 ),
@@ -72,7 +72,7 @@ class ContactView extends GetView<ContactController> {
                   onPressed: () {
                     // _launchUrl('mailto:support@yourapp.com');
                   },
-                  child: const Text("Send us an Email"),
+                  child: Text("SEND_US_AN_EMAIL".tr),
                 ),
               ),
             ],

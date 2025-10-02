@@ -9,42 +9,36 @@ class HelpView extends GetView<HelpController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Help & FAQs"),
-        backgroundColor: Color(0xFFE65A2A),
+        title: Text("HELP_AND_FAQS".tr),
+        backgroundColor: const Color(0xFFE65A2A),
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),
-        children: const [
+        children: [
           ExpansionTile(
-            title: Text("How to place an order?"),
+            title: Text("HOW_TO_PLACE_ORDER".tr),
             children: [
               Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Text(
-                  "You can place an order by browsing menu and tapping on 'Add to Cart'.",
-                ),
+                padding: const EdgeInsets.all(8.0),
+                child: Text("HOW_TO_PLACE_ORDER_DESC".tr),
               ),
             ],
           ),
           ExpansionTile(
-            title: Text("What payment methods are supported?"),
+            title: Text("WHAT_PAYMENT_METHODS".tr),
             children: [
               Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Text(
-                  "We support Cash on Delivery, Debit/Credit Cards and Wallets.",
-                ),
+                padding: const EdgeInsets.all(8.0),
+                child: Text("WHAT_PAYMENT_METHODS_DESC".tr),
               ),
             ],
           ),
           ExpansionTile(
-            title: Text("How can I track my order?"),
+            title: Text("HOW_TRACK_ORDER".tr),
             children: [
               Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Text(
-                  "Go to Orders tab in Profile section to track live updates.",
-                ),
+                padding: const EdgeInsets.all(8.0),
+                child: Text("HOW_TRACK_ORDER_DESC".tr),
               ),
             ],
           ),

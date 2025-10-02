@@ -72,7 +72,7 @@ class _LoginViewState extends State<LoginView> {
               elevation: 0,
               centerTitle: true,
               title: Text(
-                "Log In",
+                "LOGIN".tr,
                 style: TextStyle(
                   color: _yellow,
                   fontWeight: FontWeight.w800,
@@ -101,20 +101,19 @@ class _LoginViewState extends State<LoginView> {
                         children: [
                           // Welcome
                           Text(
-                            "Welcome",
+                            "WELCOME_BACK".tr,
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 22.sp,
                               fontWeight: FontWeight.w800,
                             ),
                           ),
-                         
-                         
+
                           SizedBox(height: 40.h),
 
                           // Email / Mobile
                           Text(
-                            "Email or Mobile Number",
+                            "EMAIL_OR_MOBILE".tr,
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.w700,
@@ -130,7 +129,7 @@ class _LoginViewState extends State<LoginView> {
                             decoration: InputDecoration(
                               filled: true,
                               fillColor: _field,
-                              hintText: "example@example.com",
+                              hintText: "USER_EXAMPLE_EMAIL".tr,
                               hintStyle: TextStyle(
                                 color: Colors.white70,
                                 fontSize: 13.sp,
@@ -148,7 +147,7 @@ class _LoginViewState extends State<LoginView> {
 
                           // Password
                           Text(
-                            "Password",
+                            "PASSWORD".tr,
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.w700,
@@ -161,7 +160,7 @@ class _LoginViewState extends State<LoginView> {
                             obscureText: passwordVisible,
                             style: const TextStyle(color: Colors.white),
                             validator: (v) => (v == null || v.length < 6)
-                                ? "Password must be at least 6 characters"
+                                ? "PASSWORD_MUST_BE_SIX".tr
                                 : null,
                             decoration: InputDecoration(
                               filled: true,
@@ -206,7 +205,7 @@ class _LoginViewState extends State<LoginView> {
                                 padding: EdgeInsets.only(top: 8.h),
                               ),
                               child: Text(
-                                "Forget Password",
+                                "FORGOT_PASSWORD".tr,
                                 style: TextStyle(
                                   color: _accent,
                                   fontSize: 12.sp,
@@ -237,7 +236,7 @@ class _LoginViewState extends State<LoginView> {
                                 ),
                               ),
                               child: Text(
-                                "Log In",
+                                "LOGIN".tr,
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.w700,
@@ -271,7 +270,7 @@ class _LoginViewState extends State<LoginView> {
                                   backgroundColor: _bg,
                                 ),
                                 child: Text(
-                                  "Login as Guest".tr,
+                                  "LOGIN_AS_GUEST".tr,
                                   style: TextStyle(
                                     color: _accent,
                                     fontSize: 16.sp,
@@ -306,7 +305,7 @@ class _LoginViewState extends State<LoginView> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                "Don't have an account?",
+                                "DONT_HAVE_AN_ACCOUNT".tr,
                                 style: TextStyle(
                                   color: _subtle,
                                   fontSize: 13.sp,
@@ -320,7 +319,7 @@ class _LoginViewState extends State<LoginView> {
                                   duration: const Duration(milliseconds: 350),
                                 ),
                                 child: Text(
-                                  "Sign Up",
+                                  "SIGN_UP".tr,
                                   style: TextStyle(
                                     color: _accent,
                                     fontWeight: FontWeight.w700,

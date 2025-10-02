@@ -337,7 +337,7 @@ class _Header extends StatelessWidget {
               Expanded(
                 child: Center(
                   child: Text(
-                    "Best Seller",
+                    "BEST_SELLER".tr,
                     style: fontBold.copyWith(
                       fontSize: 20.sp,
                       color: Colors.white,

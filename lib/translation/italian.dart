@@ -265,6 +265,17 @@ Map<String, String> its = {
   'USER_EXAMPLE_EMAIL': 'user@example.com',
   'GUEST_EXAMPLE_EMAIL': 'guest@gmail.com',
   'HELP_AND_FAQS': 'Aiuto e domande frequenti',
+  'HOW_TO_PLACE_ORDER': 'Come effettuare un ordine?',
+  'HOW_TO_PLACE_ORDER_DESC':
+      'Puoi effettuare un ordine sfogliando il menu e toccando "Aggiungi al carrello".',
+  'WHAT_PAYMENT_METHODS': 'Quali metodi di pagamento sono supportati?',
+  'WHAT_PAYMENT_METHODS_DESC':
+      'Supportiamo pagamento alla consegna, carte di debito/credito e portafogli.',
+  'HOW_TRACK_ORDER': 'Come posso tracciare il mio ordine?',
+  'HOW_TRACK_ORDER_DESC':
+      'Vai alla scheda Ordini nella sezione Profilo per monitorare gli aggiornamenti in tempo reale.',
+  'WE_D_LIKE_TO_HEAR': 'Ci piacerebbe sentirti!',
+  'SEND_US_AN_EMAIL': 'Inviaci una e-mail',
   'SETTINGS': 'Impostazioni',
   'QUICK_ACCESS': 'Accesso rapido',
   'LOGIN_NOW': 'Accedi ora',

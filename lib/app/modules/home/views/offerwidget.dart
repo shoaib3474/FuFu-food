@@ -19,11 +19,7 @@ class OfferWidget extends StatelessWidget {
   final String title;
   final VoidCallback? onViewAll;
 
-  const OfferWidget({
-    super.key,
-    required this.title,
-    this.onViewAll,
-  });
+  const OfferWidget({super.key, required this.title, this.onViewAll});
 
   @override
   Widget build(BuildContext context) {
@@ -53,13 +49,16 @@ class OfferWidget extends StatelessWidget {
                     child: Row(
                       children: [
                         Text(
-                          "View All",
+                          "VIEW_ALL".tr,
                           style: fontBoldWithColorBlack.copyWith(
                             color: AppColor.primaryColor,
                           ),
                         ),
-                        const Icon(Icons.arrow_forward_ios,
-                            size: 14, color: AppColor.primaryColor),
+                        const Icon(
+                          Icons.arrow_forward_ios,
+                          size: 14,
+                          color: AppColor.primaryColor,
+                        ),
                       ],
                     ),
                   ),
@@ -79,9 +78,7 @@ class OfferWidget extends StatelessWidget {
                   final offer = offerController?.offerDataList[index];
                   return InkWell(
                     onTap: () {
-                      offerController.getOfferItemList(
-                        offer!.slug.toString(),
-                      );
+                      offerController.getOfferItemList(offer!.slug.toString());
                     },
                     child: Container(
                       width: 120.w,
@@ -98,15 +95,17 @@ class OfferWidget extends StatelessWidget {
                               fit: BoxFit.cover,
                               width: 120.w,
                               height: 160.h,
-                              placeholder: (context, url) =>
-                                  Shimmer.fromColors(
-                                    child: Container(
-                                        width: 120.w, height: 160.h, color: Colors.grey),
-                                    baseColor: Colors.grey[300]!,
-                                    highlightColor: Colors.grey[400]!,
-                                  ),
+                              placeholder: (context, url) => Shimmer.fromColors(
+                                child: Container(
+                                  width: 120.w,
+                                  height: 160.h,
+                                  color: Colors.grey,
+                                ),
+                                baseColor: Colors.grey[300]!,
+                                highlightColor: Colors.grey[400]!,
+                              ),
                               errorWidget: (context, url, error) =>
-                              const Icon(Icons.error),
+                                  const Icon(Icons.error),
                             ),
                             Container(
                               padding: EdgeInsets.all(6.w),
@@ -115,10 +114,12 @@ class OfferWidget extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(12.r),
                               ),
                               child: Text(
-                                "55 ""}",
+                                "55 "
+                                "}",
                                 style: const TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold),
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
                           ],
@@ -128,7 +129,7 @@ class OfferWidget extends StatelessWidget {
                   );
                 },
               ),
-            )
+            ),
           ],
         );
       },

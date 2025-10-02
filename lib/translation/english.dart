@@ -262,6 +262,17 @@ Map<String, String> english = {
   'USER_EXAMPLE_EMAIL': 'user@example.com',
   'GUEST_EXAMPLE_EMAIL': 'guest@gmail.com',
   'HELP_AND_FAQS': 'Help & FAQs',
+  'HOW_TO_PLACE_ORDER': 'How to place an order?',
+  'HOW_TO_PLACE_ORDER_DESC':
+      "You can place an order by browsing menu and tapping on 'Add to Cart'.",
+  'WHAT_PAYMENT_METHODS': 'What payment methods are supported?',
+  'WHAT_PAYMENT_METHODS_DESC':
+      'We support Cash on Delivery, Debit/Credit Cards and Wallets.',
+  'HOW_TRACK_ORDER': 'How can I track my order?',
+  'HOW_TRACK_ORDER_DESC':
+      'Go to Orders tab in Profile section to track live updates.',
+  'WE_D_LIKE_TO_HEAR': "We'd love to hear from you!",
+  'SEND_US_AN_EMAIL': 'Send us an Email',
   'SETTINGS': 'Settings',
   'QUICK_ACCESS': 'Quick Access',
   'LOGIN_NOW': 'Login Now',
@@ -269,6 +280,7 @@ Map<String, String> english = {
   'GOOD_AFTERNOON': 'Good Afternoon',
   'GOOD_EVENING': 'Good Evening',
   'RISE_AND_SHINE': 'Rise And Shine! It’s Breakfast Time',
+  'EMAIL_OR_MOBILE': 'Email or Mobile Number',
   'FAVORITES': 'Favorites',
   'NO_FAVORITES_YET':
       'No favorites yet.\nTap the heart on any product to save it here.',
