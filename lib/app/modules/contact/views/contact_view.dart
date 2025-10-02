@@ -43,7 +43,7 @@ class ContactView extends GetView<ContactController> {
                   Icons.email_outlined,
                   color: Theme.of(context).colorScheme.primary,
                 ),
-                title: const Text("support@yourapp.com"),
+                title: Text('CONTACT_EMAIL'.tr),
                 onTap: () {
                   // _launchUrl('mailto:support@yourapp.com');
                 },
@@ -54,7 +54,7 @@ class ContactView extends GetView<ContactController> {
                   Icons.phone_outlined,
                   color: Theme.of(context).colorScheme.primary,
                 ),
-                title: const Text("+92 300 1234567"),
+                title: Text('CONTACT_PHONE'.tr),
                 onTap: () {
                   // _launchUrl('tel:+923001234567');
                 },

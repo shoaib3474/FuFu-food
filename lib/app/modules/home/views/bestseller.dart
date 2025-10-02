@@ -91,7 +91,7 @@ class _BestsellerView extends State<BestsellerView> {
                                         children: [
                                           Center(
                                             child: Text(
-                                              'its time to buy your fav',
+                                              'BUY_YOUR_FAVORITE_DISH'.tr,
                                             ),
                                           ),
                                           // .tune, color: Colors.red.shade400, size: 20),

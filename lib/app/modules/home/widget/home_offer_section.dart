@@ -53,7 +53,7 @@ Widget homeOfferSection() {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              "Experience our\ndelicious new dish",
+                              'OFFER_EXPERIENCE_DESC'.tr,
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 12.sp,
@@ -61,7 +61,7 @@ Widget homeOfferSection() {
                             ),
                             SizedBox(height: 5.h),
                             Text(
-                              "40% OFF",
+                              'OFFER_DISCOUNT'.tr,
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 20.sp,

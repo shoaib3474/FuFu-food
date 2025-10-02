@@ -77,6 +77,7 @@ Map<String, String> its = {
   'OUR_MENU': 'Il nostro menu',
   'NEW_ITEMS': 'Nuovi articoli',
   'FEATURED_ITEMS': 'Articoli in evidenza',
+  'SORT_BY_POPULAR': 'Ordina per popolarità',
   'FROM': 'Da',
   'ADD': 'Aggiungi',
   'ORDER_STATUS': 'Stato dell\'ordine',
@@ -287,6 +288,8 @@ Map<String, String> its = {
   'NO_FAVORITES_YET':
       'Nessun preferito ancora.\nTocca il cuore su qualsiasi prodotto per salvarlo qui.',
   'BUY_YOUR_FAVORITE_DISH': 'È ora di comprare il tuo piatto preferito.',
+  'OFFER_EXPERIENCE_DESC': 'Prova il nostro\ndelizioso nuovo piatto',
+  'OFFER_DISCOUNT': '40% DI SCONTO',
   'NOTIFICATIONS': 'Notifiche',
   'BEST_SELLER': 'Più venduto',
   'SEE_ALL': 'Vedi tutto',
@@ -295,4 +298,10 @@ Map<String, String> its = {
   'SELECT_OPTIONS': 'Seleziona Opzioni',
   'HOME_PAGE': 'Pagina iniziale',
   'MAIN_CONTENT': 'Contenuto principale',
+  'CHAT_SAMPLE_MESSAGE':
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat bibendum ac.',
+  'CHAT_SAMPLE_DATE': '11-9-2022, 12:56',
+  'CONTACT_EMAIL': 'support@yourapp.com',
+  'CONTACT_PHONE': '+92 300 1234567',
+  'CURRENCY_SYMBOL': '\u20b9',
 };

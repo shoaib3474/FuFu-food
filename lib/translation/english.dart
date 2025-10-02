@@ -78,6 +78,7 @@ Map<String, String> english = {
   'OUR_MENU': 'Our Menu',
   'NEW_ITEMS': 'New Items',
   'FEATURED_ITEMS': 'Featured Items',
+  'SORT_BY_POPULAR': 'Sort by Popular',
   'FROM': 'From',
   'ADD': 'Add',
   'ORDER_STATUS': 'Order Status',
@@ -285,6 +286,8 @@ Map<String, String> english = {
   'NO_FAVORITES_YET':
       'No favorites yet.\nTap the heart on any product to save it here.',
   'BUY_YOUR_FAVORITE_DISH': 'It\'s time to buy your favorite dish.',
+  'OFFER_EXPERIENCE_DESC': 'Experience our\ndelicious new dish',
+  'OFFER_DISCOUNT': '40% OFF',
   'NOTIFICATIONS': 'Notifications',
   'BEST_SELLER': 'Best Seller',
   'SEE_ALL': 'See All',
@@ -294,4 +297,10 @@ Map<String, String> english = {
   'HOME_PAGE': 'Home Page',
   'MAIN_CONTENT': 'Main Content',
   'DETAIL': 'Detail',
+  'CHAT_SAMPLE_MESSAGE':
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat bibendum ac.',
+  'CHAT_SAMPLE_DATE': '11-9-2022, 12:56',
+  'CONTACT_EMAIL': 'support@yourapp.com',
+  'CONTACT_PHONE': '+92 300 1234567',
+  'CURRENCY_SYMBOL': '\u20b9',
 };

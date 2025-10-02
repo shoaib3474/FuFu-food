@@ -111,7 +111,7 @@ class _HomeViewState extends State<HomeView> {
                                     ),
                                     const SizedBox(width: 8),
                                     Text(
-                                      "Search",
+                                      'SEARCH'.tr,
                                       style: const TextStyle(
                                         color: Colors.grey,
                                         fontSize: 14,

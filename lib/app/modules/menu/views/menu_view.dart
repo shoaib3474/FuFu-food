@@ -67,7 +67,7 @@ class _MenuViewState extends State<MenuView> {
                 Get.to(() => const SearchView());
               },
               decoration: InputDecoration(
-                hintText: "Search",
+                hintText: 'SEARCH'.tr,
                 prefixIcon: Icon(Icons.search, color: Colors.grey),
                 border: InputBorder.none,
                 contentPadding: EdgeInsets.only(top: 8.h),
@@ -225,7 +225,7 @@ Widget menuVegNonVegSection(context, box, bool fromHome, int categoryId) {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "Sort by Popular",
+                    'SORT_BY_POPULAR'.tr,
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
                       fontSize: 14.sp,
@@ -423,7 +423,7 @@ Widget foodCard(item, {bool isList = false}) {
                         borderRadius: BorderRadius.circular(20.r),
                       ),
                       child: Text(
-                        'ADD',
+                        'ADD'.tr,
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,

@@ -108,8 +108,8 @@ Widget chatConversionSection() {
                         ),
                         child: Padding(
                           padding: EdgeInsets.all(4.r),
-                          child: const Text(
-                              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat bibendum ac.',
+                          child: Text(
+                              'CHAT_SAMPLE_MESSAGE'.tr,
                               maxLines: 3),
                         ),
                       ),
@@ -118,7 +118,7 @@ Widget chatConversionSection() {
                   SizedBox(
                     height: 4.h,
                   ),
-                  const Text('11-9-2022, 12:56'),
+                  Text('CHAT_SAMPLE_DATE'.tr),
                   SizedBox(
                     height: 12.h,
                   ),
@@ -138,8 +138,8 @@ Widget chatConversionSection() {
                         ),
                         child: Padding(
                           padding: EdgeInsets.all(4.r),
-                          child: const Text(
-                              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat bibendum ac.',
+                          child: Text(
+                              'CHAT_SAMPLE_MESSAGE'.tr,
                               maxLines: 3),
                         ),
                       ),
