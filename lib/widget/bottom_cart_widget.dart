@@ -16,56 +16,51 @@ class BottomCartWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<CartController>(
-      builder:
-          (cartController) =>
-              cartController.cart.isNotEmpty
-                  ? Positioned(
-                    bottom: 0,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 16,
-                        vertical: 8,
-                      ),
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Get.to(
-                            () => CartView(fromNav: false),
-                            transition: Transition.cupertino,
-                          );
-                        },
-                        style: ElevatedButton.styleFrom(
-                          elevation: 0,
-                          minimumSize: Size(Get.width - 32, 48.h),
-                          backgroundColor: AppColor.primaryColor,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(24.r),
-                          ),
-                        ),
-                        child: Row(
-                          children: [
-                            Text(
-                              "VIEW_CART".tr +
-                                  " "
-                                      "(" +
-                                  cartController.cart.length.toString() +
-                                  " " +
-                                  "ITEMS_ADDED".tr +
-                                  ")" +
-                                  " " +
-                                  Get.find<SplashController>()
-                                      .configData
-                                      .siteDefaultCurrencySymbol! +
-                                  cartController.totalCartValue.toStringAsFixed(
-                                    2,
-                                  ),
-                              style: fontRegularBold,
-                            ),
-                          ],
-                        ),
-                      ),
+      builder: (cartController) => cartController.cart.isNotEmpty
+          ? Positioned(
+              bottom: 0,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 16,
+                  vertical: 8,
+                ),
+                child: ElevatedButton(
+                  onPressed: () {
+                    Get.to(
+                      () => CartView(fromNav: false),
+                      transition: Transition.cupertino,
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    elevation: 0,
+                    minimumSize: Size(Get.width - 32, 48.h),
+                    backgroundColor: AppColor.primaryColor,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(24.r),
                     ),
-                  )
-                  : const SizedBox(),
+                  ),
+                  child: Row(
+                    children: [
+                      Text(
+                        "VIEW_CART".tr,
+                        style: fontRegularBoldwithWhiteColor,
+                      ),
+                      SizedBox(width: 4.w),
+                      Text(
+                        "(${cartController.cart.length} ${"ITEMS_ADDED".tr})",
+                        style: fontRegularBoldwithWhiteColor,
+                      ),
+                      const Spacer(),
+                      Text(
+                        '${'CURRENCY_SYMBOL'.tr}${cartController.totalCartValue.toStringAsFixed(2)}',
+                        style: fontRegularBoldwithWhiteColor,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            )
+          : const SizedBox(),
     );
   }
 }

@@ -279,4 +279,25 @@ Map<String, String> bangla = {
   'DETAILS': 'বিস্তারিত',
   'DETAIL':
       'বিস্তারিত', // Note: 'DETAIL' is kept for backward compatibility, but 'DETAILS' is preferred.
+  'SORT_BY_POPULAR': 'জনপ্রিয়তা অনুসারে সাজান',
+  'CHAT_SAMPLE_MESSAGE':
+      'লোরেম ইপসাম ডলোর সিট আমেত, কনসেক্টেটার এডিপিসিং এলিট। সেড ফিউগিয়াট বিবেন্ডাম এসি।',
+  'CHAT_SAMPLE_DATE': '১১-৯-২০২২, ১২:৫৬',
+  'CONTACT_EMAIL': 'support@yourapp.com',
+  'CONTACT_PHONE': '+92 300 1234567',
+  'CURRENCY_SYMBOL': '৳',
+  'EMAIL_OR_MOBILE': 'ইমেইল বা মোবাইল নম্বর',
+  'OFFER_EXPERIENCE_DESC': 'আমাদের\nসুস্বাদু নতুন খাবারটি উপভোগ করুন',
+  'OFFER_DISCOUNT': '৪০% ছাড়',
+  'HOW_TO_PLACE_ORDER': 'কিভাবে অর্ডার করবেন?',
+  'HOW_TO_PLACE_ORDER_DESC':
+      'আপনি মেনু ব্রাউজ করে এবং \'কার্টে যোগ করুন\' এ ট্যাপ করে একটি অর্ডার দিতে পারেন।',
+  'WHAT_PAYMENT_METHODS': 'কোন পেমেন্ট পদ্ধতি সমর্থিত?',
+  'WHAT_PAYMENT_METHODS_DESC':
+      'আমরা ক্যাশ অন ডেলিভারি, ডেবিট/ক্রেডিট কার্ড এবং ওয়ালেট সমর্থন করি।',
+  'HOW_TRACK_ORDER': 'আমি কিভাবে আমার অর্ডার ট্র্যাক করতে পারি?',
+  'HOW_TRACK_ORDER_DESC':
+      'লাইভ আপডেট ট্র্যাক করতে প্রোফাইল বিভাগের অর্ডার ট্যাবে যান।',
+  'WE_D_LIKE_TO_HEAR': 'আমরা আপনার কাছ থেকে শুনতে চাই!',
+  'SEND_US_AN_EMAIL': 'আমাদের একটি ইমেল পাঠান',
 };

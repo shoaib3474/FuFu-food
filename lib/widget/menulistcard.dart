@@ -13,8 +13,6 @@ import '../app/modules/item/views/item_view.dart';
 import '../util/constant.dart';
 import '../util/style.dart';
 
-// ❤ make sure this path matches your project structure.
-// If favorite_heart_button.dart lives in the same /widget folder, this is correct.
 // import 'favorite_heart_button.dart';
 
 Widget itemCardList1(dynamic item, int index, BuildContext context) {

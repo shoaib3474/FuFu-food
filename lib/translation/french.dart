@@ -286,4 +286,25 @@ Map<String, String> french = {
   'SELECT_OPTIONS': 'Sélectionner des options',
   'HOME_PAGE': 'Page d\'accueil',
   'MAIN_CONTENT': 'Contenu principal',
+  'SORT_BY_POPULAR': 'Trier par popularité',
+  'CHAT_SAMPLE_MESSAGE':
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat bibendum ac.',
+  'CHAT_SAMPLE_DATE': '11-9-2022, 12:56',
+  'CONTACT_EMAIL': 'support@yourapp.com',
+  'CONTACT_PHONE': '+92 300 1234567',
+  'CURRENCY_SYMBOL': '€',
+  'EMAIL_OR_MOBILE': 'E-mail ou numéro de portable',
+  'OFFER_EXPERIENCE_DESC': 'Découvrez notre\ndélicieux nouveau plat',
+  'OFFER_DISCOUNT': '40% DE RÉDUCTION',
+  'HOW_TO_PLACE_ORDER': 'Comment passer une commande ?',
+  'HOW_TO_PLACE_ORDER_DESC':
+      'Vous pouvez passer une commande en parcourant le menu et en appuyant sur "Ajouter au panier".',
+  'WHAT_PAYMENT_METHODS': 'Quels modes de paiement sont pris en charge ?',
+  'WHAT_PAYMENT_METHODS_DESC':
+      'Nous prenons en charge le paiement à la livraison, les cartes de débit/crédit et les portefeuilles.',
+  'HOW_TRACK_ORDER': 'Comment puis-je suivre ma commande ?',
+  'HOW_TRACK_ORDER_DESC':
+      'Allez dans l\'onglet Commandes de la section Profil pour suivre les mises à jour en direct.',
+  'WE_D_LIKE_TO_HEAR': 'Nous aimerions avoir de vos nouvelles !',
+  'SEND_US_AN_EMAIL': 'Envoyez-nous un e-mail',
 };

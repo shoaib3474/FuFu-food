@@ -275,4 +275,25 @@ Map<String, String> arabic = {
   'SELECT_OPTIONS': 'حدد الخيارات',
   'HOME_PAGE': 'الصفحة الرئيسية',
   'MAIN_CONTENT': 'المحتوى الرئيسي',
+  'SORT_BY_POPULAR': 'فرز حسب الشعبية',
+  'CHAT_SAMPLE_MESSAGE':
+      'لوريم إيبسوم دولار سيت أميت، كونسيكتيتور أديبيسينغ إليت. سيد فيوجيات بيبيندوم إيك.',
+  'CHAT_SAMPLE_DATE': '11-9-2022, 12:56',
+  'CONTACT_EMAIL': 'support@yourapp.com',
+  'CONTACT_PHONE': '+92 300 1234567',
+  'CURRENCY_SYMBOL': 'د.إ',
+  'EMAIL_OR_MOBILE': 'البريد الإلكتروني أو رقم الجوال',
+  'OFFER_EXPERIENCE_DESC': 'جرب طبقنا\nالجديد اللذيذ',
+  'OFFER_DISCOUNT': 'خصم 40%',
+  'HOW_TO_PLACE_ORDER': 'كيفية تقديم طلب؟',
+  'HOW_TO_PLACE_ORDER_DESC':
+      'يمكنك تقديم طلب عن طريق تصفح القائمة والضغط على "إضافة إلى السلة".',
+  'WHAT_PAYMENT_METHODS': 'ما هي طرق الدفع المدعومة؟',
+  'WHAT_PAYMENT_METHODS_DESC':
+      'نحن ندعم الدفع عند الاستلام وبطاقات الخصم/الائتمان والمحافظ.',
+  'HOW_TRACK_ORDER': 'كيف يمكنني تتبع طلبي؟',
+  'HOW_TRACK_ORDER_DESC':
+      'اذهب إلى علامة التبويب "الطلبات" في قسم الملف الشخصي لتتبع التحديثات المباشرة.',
+  'WE_D_LIKE_TO_HEAR': 'نود أن نسمع منك!',
+  'SEND_US_AN_EMAIL': 'أرسل لنا بريدًا إلكترونيًا',
 };

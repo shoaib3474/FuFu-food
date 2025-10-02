@@ -290,6 +290,8 @@ Map<String, String> its = {
   'BUY_YOUR_FAVORITE_DISH': 'È ora di comprare il tuo piatto preferito.',
   'OFFER_EXPERIENCE_DESC': 'Prova il nostro\ndelizioso nuovo piatto',
   'OFFER_DISCOUNT': '40% DI SCONTO',
+  'OFFER_EXPERIENCE_DESC': 'Prova il nostro\ndelizioso nuovo piatto',
+  'OFFER_DISCOUNT': '40% DI SCONTO',
   'NOTIFICATIONS': 'Notifiche',
   'BEST_SELLER': 'Più venduto',
   'SEE_ALL': 'Vedi tutto',
@@ -303,5 +305,15 @@ Map<String, String> its = {
   'CHAT_SAMPLE_DATE': '11-9-2022, 12:56',
   'CONTACT_EMAIL': 'support@yourapp.com',
   'CONTACT_PHONE': '+92 300 1234567',
-  'CURRENCY_SYMBOL': '\u20b9',
+  'CURRENCY_SYMBOL': '€',
+  'EMAIL_OR_MOBILE': 'Email o Numero di Cellulare',
+  'HOW_TO_PLACE_ORDER': 'Come effettuare un ordine?',
+  'HOW_TO_PLACE_ORDER_DESC':
+      'Puoi effettuare un ordine sfogliando il menu e toccando "Aggiungi al carrello".',
+  'WHAT_PAYMENT_METHODS': 'Quali metodi di pagamento sono supportati?',
+  'WHAT_PAYMENT_METHODS_DESC':
+      'Supportiamo pagamento alla consegna, carte di debito/credito e portafogli.',
+  'HOW_TRACK_ORDER': 'Come posso tracciare il mio ordine?',
+  'HOW_TRACK_ORDER_DESC':
+      'Vai alla scheda Ordini nella sezione Profilo per monitorare gli aggiornamenti in tempo reale.',
 };

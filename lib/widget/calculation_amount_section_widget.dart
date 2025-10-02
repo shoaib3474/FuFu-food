@@ -14,7 +14,7 @@ Widget calculationAmountSection(controller) {
   } catch (_) {}
 
   String fmt(double value) => value.toStringAsFixed(digits);
-
+  final currencySymbol = 'CURRENCY_SYMBOL'.tr;
   return Card(
     elevation: 0,
     shape: RoundedRectangleBorder(
@@ -33,7 +33,7 @@ Widget calculationAmountSection(controller) {
               ),
               const Spacer(),
               Text(
-                " ${fmt(cartController.totalCartValue)}",
+                "$currencySymbol ${fmt(cartController.totalCartValue)}",
                 style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w500),
               ),
             ],
@@ -49,7 +49,7 @@ Widget calculationAmountSection(controller) {
               ),
               const Spacer(),
               Text(
-                " ${fmt(cartController.couponDiscount)}",
+                "$currencySymbol ${fmt(cartController.couponDiscount)}",
                 style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w500),
               ),
             ],
@@ -65,7 +65,7 @@ Widget calculationAmountSection(controller) {
               ),
               const Spacer(),
               Text(
-                fmt(cartController.deliveryCharge),
+                "$currencySymbol ${fmt(cartController.deliveryCharge)}",
                 style: TextStyle(
                   fontSize: 14.sp,
                   color: Colors.green,
@@ -89,7 +89,7 @@ Widget calculationAmountSection(controller) {
               ),
               const Spacer(),
               Text(
-                fmt(cartController.total),
+                "$currencySymbol ${fmt(cartController.total)}",
                 style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w600),
               ),
             ],

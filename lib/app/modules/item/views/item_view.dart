@@ -1506,41 +1506,12 @@ class _ItemViewState extends State<ItemView> {
                               ),
                               SizedBox(width: 10.w),
                               Text("ADD_TO_CARTS".tr, style: fontMedium),
+                              const Spacer(),
+                              Text(
+                                '${'CURRENCY_SYMBOL'.tr} ${cartTotal.toStringAsFixed(2)}',
+                                style: fontMedium.copyWith(color: Colors.white),
+                              ),
                               SizedBox(width: 10.w),
-                              Get.find<SplashController>()
-                                          .configData
-                                          .siteCurrencyPosition ==
-                                      5
-                                  ? Row(
-                                      children: [
-                                        Text(
-                                          Get.find<SplashController>()
-                                              .configData
-                                              .siteDefaultCurrencySymbol!
-                                              .toString(),
-                                          style: fontMediumWithCurrency,
-                                        ),
-                                        Text(
-                                          cartTotal.toStringAsFixed(2),
-                                          style: fontMedium,
-                                        ),
-                                      ],
-                                    )
-                                  : Row(
-                                      children: [
-                                        Text(
-                                          cartTotal.toStringAsFixed(2),
-                                          style: fontMedium,
-                                        ),
-                                        Text(
-                                          Get.find<SplashController>()
-                                              .configData
-                                              .siteDefaultCurrencySymbol!
-                                              .toString(),
-                                          style: fontMediumWithCurrency,
-                                        ),
-                                      ],
-                                    ),
                             ],
                           ),
                         ),
