@@ -281,4 +281,5 @@ Map<String, String> english = {
   'SELECT_OPTIONS': 'Select Options',
   'HOME_PAGE': 'Home Page',
   'MAIN_CONTENT': 'Main Content',
+  'DETAIL': 'Detail',
 };

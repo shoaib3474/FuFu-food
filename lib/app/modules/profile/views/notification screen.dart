@@ -132,7 +132,7 @@ class DetailPage extends StatelessWidget {
       backgroundColor: Colors.orange.shade50,
       appBar: AppBar(
         backgroundColor: const Color(0xFFFF6433),
-        title: Text("Detail"),
+        title: Text("DETAIL".tr),
       ),
       body: Center(
         child: Text(
