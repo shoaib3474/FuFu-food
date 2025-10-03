@@ -94,7 +94,7 @@ Widget BestItemSection() {
                             borderRadius: BorderRadius.circular(8.r),
                           ),
                           child: Text(
-                            "${'CURRENCY_SYMBOL'.tr}${(double.tryParse(item.price ?? '0')?.toInt() ?? 0)}",
+                            "${item.currencyPrice}", // Convert price string to int with ₹ symbol
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 12.sp,

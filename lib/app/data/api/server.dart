@@ -33,8 +33,10 @@ class Server {
     try {
       client.badCertificateCallback =
           ((X509Certificate cert, String host, int port) => true);
-      return await http.get(Uri.parse(endPoint!),
-          headers: _getHttpHeadersNotToken());
+      return await http.get(
+        Uri.parse(endPoint!),
+        headers: _getHttpHeadersNotToken(),
+      );
     } catch (error) {
       return null;
     } finally {
@@ -45,8 +47,10 @@ class Server {
   getRequestSettings(endPoint) async {
     HttpClient client = HttpClient();
     try {
-      return await http.get(Uri.parse(APIList.baseUrl! + endPoint!),
-          headers: getAuthHeaders());
+      return await http.get(
+        Uri.parse(APIList.baseUrl! + endPoint!),
+        headers: getAuthHeaders(),
+      );
     } catch (error) {
       return null;
     } finally {
@@ -59,8 +63,11 @@ class Server {
     try {
       client.badCertificateCallback =
           ((X509Certificate cert, String host, int port) => true);
-      return await http.post(Uri.parse(endPoint!),
-          headers: getAuthHeaders(), body: body);
+      return await http.post(
+        Uri.parse(endPoint!),
+        headers: getAuthHeaders(),
+        body: body,
+      );
     } catch (error) {
       //  return null;
     } finally {
@@ -73,8 +80,11 @@ class Server {
     try {
       client.badCertificateCallback =
           ((X509Certificate cert, String host, int port) => true);
-      return await http.post(Uri.parse(endPoint!),
-          headers: _getHttpHeaders(), body: body);
+      return await http.post(
+        Uri.parse(endPoint!),
+        headers: _getHttpHeaders(),
+        body: body,
+      );
     } catch (error) {
       return null;
     } finally {
@@ -87,8 +97,11 @@ class Server {
     try {
       client.badCertificateCallback =
           ((X509Certificate cert, String host, int port) => true);
-      return await http.put(Uri.parse(endPoint!),
-          headers: _getHttpHeaders(), body: body);
+      return await http.put(
+        Uri.parse(endPoint!),
+        headers: _getHttpHeaders(),
+        body: body,
+      );
     } catch (error) {
       return null;
     } finally {
@@ -123,8 +136,10 @@ class Server {
     try {
       client.badCertificateCallback =
           ((X509Certificate cert, String host, int port) => true);
-      return await http.delete(Uri.parse(endPoint!),
-          headers: _getHttpHeaders());
+      return await http.delete(
+        Uri.parse(endPoint!),
+        headers: _getHttpHeaders(),
+      );
     } catch (error) {
       return null;
     } finally {

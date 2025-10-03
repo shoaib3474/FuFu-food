@@ -236,12 +236,14 @@ class _HomeViewState extends State<HomeView> {
                           color: Colors.black,
                         ),
                       ),
-                      Text(
-                        "RISE_AND_SHINE".tr,
-                        style: const TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.red,
+                      Flexible(
+                        child: Text(
+                          "RISE_AND_SHINE".tr,
+                          style: const TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.red,
+                          ),
                         ),
                       ),
                     ],

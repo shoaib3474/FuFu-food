@@ -340,7 +340,7 @@ class _Header extends StatelessWidget {
                     "BEST_SELLER".tr,
                     style: fontBold.copyWith(
                       fontSize: 20.sp,
-                      color: Colors.white,
+                      color: Colors.black,
                     ),
                   ),
                 ),
